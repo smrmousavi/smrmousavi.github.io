@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Validation / Second Validation Round.docx | HMSC Experiments Replication Package</title>
+<link href="../assets/style.css" rel="stylesheet"/></head>
+<body><a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="bar"><a class="brand" href="../index.html"><span class="brand-mark">K</span><span class="brand-text"><strong>HMSC Experiments</strong><span>Replication package website</span></span></a><nav class="primary"><a href="../index.html">Overview</a><a href="../browse/index.html">Browse data</a></nav></div></header>
+<main id="main"><p class="breadcrumbs"><a href="../index.html">Overview</a> / <a href="../browse/index.html">Browse data</a> / Converted Word document</p>
+<h1>Validation / Second Validation Round.docx</h1>
+<div class="button-row"><a class="button light" href="../browse/index.html">Back to data browser</a></div>
+<div class="notice small">This page is a uniformly styled HTML rendering of the original Word file. The original Word file is retained in the data folder for verification.</div>
+<section class="doc-content"><p>Prompt:</p>
+<p>I have now re-done some of the experiments to address some of the discrepancies identified before. In the attached zip file, I am including the annotated results of the new experiments. Please check if there is any discrepancy in the tasks assigned to the different LLMs; the tasks assigned to all three LLMs are supposed to be identical. Please note that asking the LLMs to draw the MSC should not be considered a discrepancy as sometimes LLMs do not produce the requested MSC.</p>
+<p>Answer:</p>
+<h1 id="summary">Summary</h1>
+<p>I reviewed the new annotated zip and compared the task prompts across Gemini, GPT, and Qwen for all 9 examples. Requests to draw or redraw MSCs are not treated as discrepancies, because some LLMs do not produce the requested MSC and may receive follow-up drawing prompts.</p>
+<p>Most of the earlier discrepancies appear to have been fixed. The remaining substantive discrepancies are mainly in Example 2 and Example 9.</p>
+<table>
+<colgroup>
+<col style="width: 12%"/>
+<col style="width: 17%"/>
+<col style="width: 70%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Example</strong></th>
+<th><strong>Discrepancy?</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>No substantive discrepancy</td>
+<td>The ordering question is phrased in reverse order for Gemini - "receipt of m3 and sending m1" vs "sending m1 and receiving m3" - but it compares the same two events. This should not be treated as a substantive discrepancy.</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Yes</td>
+<td>Several task mismatches remain. Gemini, GPT, and Qwen are not assigned the same sequence of tasks.</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>No</td>
+<td>Core tasks match across all three. Extra MSC drawing requests were ignored.</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>No</td>
+<td>Core horizontal/vertical composition and ordering tasks match. Drawing prompts ignored.</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>No</td>
+<td>Core tasks match. Drawing prompts ignored.</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>No</td>
+<td>Tasks match across all three.</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>No</td>
+<td>Core HMSC task matches. Extra "draw the two MSCs" follow-up for GPT/Qwen ignored.</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>No</td>
+<td>Core HMSC task matches. GPT’s "redraw the second MSC" follow-up ignored as a drawing-related request.</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Yes</td>
+<td>One ordering question differs: Gemini asks about "sending Success and sending Deliver," while GPT/Qwen ask "sending Success and sending receiving Deliver."</td>
+</tr>
+</tbody>
+</table>
+<h1 id="detailed-remaining-discrepancies">Detailed remaining discrepancies</h1>
+<h2 id="example-2---substantive-discrepancies-remain">Example 2 - substantive discrepancies remain</h2>
+<p>The tasks are still not aligned.</p>
+<blockquote>
+<blockquote>
+<p><em><strong>Gemini asks:</strong></em></p>
+</blockquote>
+</blockquote>
+<ul>
+<li><p>What is the correct ordering between the receipt of m2 and receiving m1?</p></li>
+<li><p>What is the correct ordering between sending m2 and sending m1?</p></li>
+<li><p>Based on the diagram above, generate a message sequence chart in which message m1 is abstracted away.</p></li>
+<li><p>Produce the list of traces of the original message sequence chart given below.</p></li>
+<li><p>Draw a labelled transition system...</p></li>
+</ul>
+<blockquote>
+<blockquote>
+<p><em><strong>GPT asks:</strong></em></p>
+</blockquote>
+</blockquote>
+<ul>
+<li><p>What is the correct ordering between sending m1 and sending m2?</p></li>
+<li><p>What is ordered in the diagram?</p></li>
+<li><p>What is the correct ordering between receiving m1 and sending receiving m2?</p></li>
+<li><p>Based on the diagram above, generate a message sequence chart in which message m1 is abstracted away...</p></li>
+<li><p>Merge instance i1 and i2...</p></li>
+<li><p>Produce the set of all traces...</p></li>
+<li><p>Draw a labelled transition system...</p></li>
+</ul>
+<blockquote>
+<blockquote>
+<p><em><strong>Qwen asks:</strong></em></p>
+</blockquote>
+</blockquote>
+<ul>
+<li><p>What is the correct ordering between sending m1 and sending m2?</p></li>
+<li><p>What is the correct ordering between receiving m1 and receiving m2?</p></li>
+<li><p>Merge instance i2 and i3...</p></li>
+<li><p>Produce the set of all traces...</p></li>
+<li><p>Draw a labelled transition system...</p></li>
+</ul>
+<p>The main problems are:</p>
+<ol type="1">
+<li><p>GPT has an extra or ambiguous task: "What is ordered in the diagram?"</p></li>
+<li><p>GPT has a typo or malformed question: "receiving m1 and sending receiving m2."</p></li>
+<li><p>The merge task differs: GPT asks to merge i1 and i2; Qwen asks to merge i2 and i3; Gemini does not show the corresponding merge task in the annotated file.</p></li>
+<li><p>The abstraction task appears for Gemini and GPT but not Qwen, at least not in the extracted prompt sequence.</p></li>
+</ol>
+<p>Conclusion for Example 2: it is still not comparable as an identical-task experiment.</p>
+<h2 id="example-9---minor-but-real-discrepancy">Example 9 - minor but real discrepancy</h2>
+<p>Gemini asks:</p>
+<blockquote>
+<p><em>What is the correct ordering between sending Success and sending Deliver?</em></p>
+</blockquote>
+<p>GPT and Qwen ask:</p>
+<blockquote>
+<p><em>What is the correct ordering between sending Success and sending receiving Deliver?</em></p>
+</blockquote>
+<p>This appears to be a wording error in GPT/Qwen. It may have been intended to mean either "sending Success and receiving Deliver" or "sending Success and sending Deliver." As written, it is not identical to Gemini’s task. Example 9 should therefore be flagged as having a minor but real prompt discrepancy.</p>
+<h1 id="note-on-diagrams">Note on diagrams</h1>
+<p>The first embedded source images are consistent across the three models for most examples. In Example 2, GPT’s first image has a different size/hash from Gemini/Qwen, but visually it appears to be the same MSC, just scaled or cropped differently. This should not be treated as a substantive discrepancy unless exact image-file identity is required.</p>
+<h1 id="overall-conclusion">Overall conclusion</h1>
+<p>After excluding drawing/redrawing requests, Examples 1 and 3-8 appear comparable as identical-task experiments. Examples 2 and 9 should still be treated as having task discrepancies, with Example 2 being the more serious issue.</p>
+</section></main><footer class="site-footer"><div><p>Static replication package site generated from the supplied PDF and ZIP archive. Available data files are included in <code>data/</code>; Word documents are provided as uniformly styled HTML pages.</p></div></footer></body></html>

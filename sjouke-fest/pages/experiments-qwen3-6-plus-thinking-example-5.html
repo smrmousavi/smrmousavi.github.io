@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Experiments / QWen3.6-Plus-Thinking / Example 5.docx | HMSC Experiments Replication Package</title>
+<link href="../assets/style.css" rel="stylesheet"/></head>
+<body><a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="bar"><a class="brand" href="../index.html"><span class="brand-mark">K</span><span class="brand-text"><strong>HMSC Experiments</strong><span>Replication package website</span></span></a><nav class="primary"><a href="../index.html">Overview</a><a href="../browse/index.html">Browse data</a></nav></div></header>
+<main id="main"><p class="breadcrumbs"><a href="../index.html">Overview</a> / <a href="../browse/index.html">Browse data</a> / Converted Word document</p>
+<h1>Experiments / QWen3.6-Plus-Thinking / Example 5.docx</h1>
+<div class="button-row"><a class="button light" href="../browse/index.html">Back to data browser</a></div>
+<div class="notice small">This page is a uniformly styled HTML rendering of the original Word file. The original Word file is retained in the data folder for verification.</div>
+<section class="doc-content"><p><strong>Question:</strong> Consider the following two message sequence charts labelled "first" and "second"; compose them horizontally and draw the resulting composed message sequence chart.</p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image1.png" style="width:6.27014in;height:1.89583in"/></p>
+<p><strong>Answer:</strong></p>
+<p>Based on standard Message Sequence Chart (MSC) notation (specifically ITU-T Z.120), **horizontal composition** typically refers to **parallel composition** (also known as concurrent composition). This means the two charts represent scenarios that can happen concurrently. The instances with the same name (`i`, `j`, `k`) are merged into single lifelines.</p>
+<p>Here is the step-by-step derivation of the composed chart:</p>
+<p>1. **Instances:** The resulting chart will have three lifelines: `i`, `j`, and `k`.</p>
+<p>2. **Events:** The chart will contain all events from both "first" and "second":</p>
+<p>* Message `m` (from `i` to `j`)</p>
+<p>* Action `a` (on `k`)</p>
+<p>* Message `n` (from `i` to `j`)</p>
+<p>* Message `o` (from `k` to `j`)</p>
+<p>3. **Ordering Constraints:**</p>
+<p>* **From "first":** `m` and `a` are roughly concurrent (or `m` slightly before `a`, but usually treated as a block).</p>
+<p>* **From "second":** `n` happens before `o` (visually `n` is higher).</p>
+<p>* **Parallel Composition:** The events of "first" (`m`, `a`) and "second" (`n`, `o`) are interleaved. There is no strict ordering between the "first" block and the "second" block, *except* for the internal constraints of each block and causality (e.g., send before receive).</p>
+<p>* *Note:* Since `n` must be before `o` in the "second" chart, this order is preserved. `m` and `a` can happen before, after, or in between `n` and `o`.</p>
+<p>**Resulting Chart (Representative Trace):**</p>
+<p>Below is a drawing of one valid interleaving (trace) of the parallel composition. In this trace, I have placed `m` and `a` first, then `n`, then `o`. This satisfies the condition that `n` is before `o`. Note that `m` and `a` could theoretically happen after `o` as well in a parallel composition, but typically we group the "start" events.</p>
+<p>```text</p>
+<p>+-----------------------------+</p>
+<p>| Composed MSC |</p>
+<p>| |</p>
+<p>| i j k |</p>
+<p>| | | | |</p>
+<p>| |---m--&gt;| | | (From "first")</p>
+<p>| | | | a | (From "first", action on k)</p>
+<p>| | | | |</p>
+<p>| |---n--&gt;| | | (From "second")</p>
+<p>| | | | |</p>
+<p>| | |&lt;--o---| | (From "second", o must be after n)</p>
+<p>| | | | |</p>
+<p>| # # # | (Termination)</p>
+<p>| |</p>
+<p>+-----------------------------+</p>
+<p>```</p>
+<p>**Explanation of the Drawing:**</p>
+<p>* **Lifelines:** `i`, `j`, `k` are continuous.</p>
+<p>* **Messages:**</p>
+<p>* `m`: `i` sends to `j`.</p>
+<p>* `n`: `i` sends to `j`.</p>
+<p>* `o`: `k` sends to `j`.</p>
+<p>* **Action:** `a` occurs on `k`.</p>
+<p>* **Order:**</p>
+<p>* `n` is placed above `o` to preserve the ordering from the "second" chart.</p>
+<p>* `m` and `a` are placed above `n` and `o` here, but in a true parallel composition, they are concurrent with `n` and `o`. The diagram above shows one possible valid sequence ($m, a, n, o$).</p>
+<p>If the intention was **Sequential Composition** (doing "first" then "second"), the chart would look almost identical to the one above, but with a strict interpretation that *all* of "first" happens before *all* of "second". Given the term "Horizontal Composition", the parallel interpretation is technically correct, but visually, for these specific charts, a sequential trace ($m, a, n, o$) is a valid representation of the parallel composition as well.</p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image2.png" style="width:2.51565in;height:1.88709in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image3.png" style="width:2.28676in;height:1.71538in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image4.png" style="width:2.33087in;height:1.74847in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image5.png" style="width:2.32377in;height:1.74315in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image6.png" style="width:2.31752in;height:1.73846in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image7.png" style="width:2.58552in;height:1.9395in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image8.png" style="width:2.55337in;height:1.91538in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image9.png" style="width:2.58414in;height:1.93846in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image10.png" style="width:2.11243in;height:1.58462in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image11.png" style="width:2.94706in;height:2.2107in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image12.png" style="width:2.92399in;height:2.19339in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image13.png" style="width:2.97381in;height:2.23077in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image14.png" style="width:2.78923in;height:2.09231in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image15.png" style="width:2.89177in;height:2.16923in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image16.png" style="width:2.89177in;height:2.16923in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image17.png" style="width:2.81999in;height:2.11538in"/></p>
+<p><strong>Question:</strong> What is the order between sending m and receiving o in the composed diagram.</p>
+<p><strong>Answer:</strong></p>
+<p>The user wants to know the order between sending `m` and receiving `o` in the horizontally composed diagram.</p>
+<p>**1. Analysis of the Input Charts:**</p>
+<p>* **msc first:**</p>
+<p>* Instance `i` sends message `m` to instance `j`.</p>
+<p>* Instance `k` performs action `a`.</p>
+<p>* **msc second:**</p>
+<p>* Instance `i` sends message `n` to instance `j`.</p>
+<p>* Instance `k` sends message `o` to instance `j`.</p>
+<p>**2. Horizontal Composition:**</p>
+<p>In Message Sequence Chart (MSC) notation (specifically ITU-T Z.120), **horizontal composition** typically refers to **parallel composition** (denoted as $M_1 || M_2$).</p>
+<p>* The resulting chart contains the union of instances (`i`, `j`, `k`) and events from both charts.</p>
+<p>* The causal ordering within each original chart is preserved.</p>
+<p>* From `msc first`: `send(m)` happens before `receive(m)`. `action(a)` is independent.</p>
+<p>* From `msc second`: `send(n)` happens before `receive(n)`. `send(o)` happens before `receive(o)`.</p>
+<p>* Events from `msc first` and `msc second` are **concurrent** (interleaved) unless they share an instance and have a specific ordering constraint.</p>
+<p>* Shared instances are `i`, `j`, and `k`.</p>
+<p>* On instance `j`, we have `receive(m)`, `receive(n)`, and `receive(o)`. In parallel composition, there is no strict global ordering between these receive events unless specified (e.g., by a coregion or explicit ordering). They can happen in any order.</p>
+<p>**3. Order between sending `m` and receiving `o`:**</p>
+<p>* `send(m)` is an event in `msc first`.</p>
+<p>* `receive(o)` is an event in `msc second`.</p>
+<p>* Since the composition is parallel, and there is no causal chain linking `msc first` to `msc second` (like a message from `first` triggering `second`), the events are **concurrent**.</p>
+<p>* Therefore, there is **no specific order** between sending `m` and receiving `o`. They can happen in any relative order (m before o, o before m, or overlapping).</p>
+<p>**Note on Sequential Composition:**</p>
+<p>If "Horizontal Composition" was a misnomer for **Sequential Composition** (doing `first` then `second`), then all events in `first` would happen before all events in `second`. In that specific case, `send(m)` would happen **before** `receive(o)`. However, standard terminology defines horizontal composition as parallel. Given the labels "first" and "second", sequential composition is a possibility, but parallel is the technical definition of "horizontal".</p>
+<p>**Conclusion:**</p>
+<p>Assuming standard MSC semantics where horizontal composition is parallel composition:</p>
+<p>The order is **concurrent** (no order).</p>
+<p>If the provided list of images implies a specific interpretation (like Sequential), then the answer would be "send(m) is before receive(o)". Looking at the images, none perfectly match the parallel composition of the specific events (likely due to label mismatches in the options), but the theoretical answer stands.</p>
+<p>**Answer:**</p>
+<p>In the horizontally composed (parallel) diagram, there is **no causal order** between sending message `m` and receiving message `o`. They are **concurrent** events. Sending `m` belongs to the "first" chart and receiving `o` belongs to the "second" chart, and in parallel composition, events from the two charts are interleaved without a fixed sequence unless they share a strict causal dependency on a common lifeline, which is not the case here for these specific events.</p>
+<p>Question:</p>
+<p>Please consider the original two MSCs labelled "first" and "second", given here again. Please compose them vertically (by putting "first" on top and "second" at the bottom). Please draw the resulting composed diagram<img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image1.png" style="width:6.27014in;height:1.89583in"/></p>
+<p>Answer:</p>
+<p>Based on the rules of vertical composition for Message Sequence Charts (MSCs), we concatenate the charts by placing `msc second` below `msc first`. The lifelines for instances `i`, `j`, and `k` are continuous. The events from `msc first` occur before the events from `msc second`.</p>
+<p>**Resulting Diagram Description:**</p>
+<p>1. **Lifelines:** Three vertical lifelines for instances `i`, `j`, and `k`.</p>
+<p>2. **Top Section (from `msc first`):**</p>
+<p>* Message `m` is sent from `i` to `j`.</p>
+<p>* Action `a` occurs on instance `k`.</p>
+<p>3. **Bottom Section (from `msc second`):**</p>
+<p>* Message `n` is sent from `i` to `j`.</p>
+<p>* Message `o` is sent from `k` to `j`.</p>
+<p>Here is the drawn composed diagram:</p>
+<p>```python</p>
+<p>import matplotlib.pyplot as plt</p>
+<p>import matplotlib.patches as patches</p>
+<p>def draw_msc_composition():</p>
+<p>fig, ax = plt.figure(), plt.gca()</p>
+<p>ax.set_xlim(0, 10)</p>
+<p>ax.set_ylim(0, 10)</p>
+<p>ax.axis('off')</p>
+<p># Define lifeline positions</p>
+<p>x_i, x_j, x_k = 2, 5, 8</p>
+<p># Draw Lifelines (dashed lines)</p>
+<p>for x, label in [(x_i, 'i'), (x_j, 'j'), (x_k, 'k')]:</p>
+<p>ax.plot([x, x], [0.5, 9.5], 'k--', linewidth=1.5)</p>
+<p>ax.text(x, 10, label, ha='center', fontsize=12, fontweight='bold')</p>
+<p># --- Top Part: msc first ---</p>
+<p>y_top = 8</p>
+<p># Message m: i -&gt; j</p>
+<p>ax.arrow(x_i, y_top, x_j - x_i - 0.3, 0, head_width=0.2, head_length=0.3, fc='k', ec='k', length_includes_head=True)</p>
+<p>ax.text((x_i + x_j) / 2, y_top + 0.3, 'm', ha='center', fontsize=12)</p>
+<p># Action a: on k</p>
+<p>rect_a = patches.Rectangle((x_k - 0.4, y_top - 0.4), 0.8, 0.8, linewidth=1.5, edgecolor='k', facecolor='w')</p>
+<p>ax.add_patch(rect_a)</p>
+<p>ax.text(x_k, y_top, 'a', ha='center', va='center', fontsize=12)</p>
+<p># --- Bottom Part: msc second ---</p>
+<p>y_mid = 5</p>
+<p>y_bot = 2</p>
+<p># Message n: i -&gt; j</p>
+<p>ax.arrow(x_i, y_mid, x_j - x_i - 0.3, 0, head_width=0.2, head_length=0.3, fc='k', ec='k', length_includes_head=True)</p>
+<p>ax.text((x_i + x_j) / 2, y_mid + 0.3, 'n', ha='center', fontsize=12)</p>
+<p># Message o: k -&gt; j</p>
+<p># Arrow points left from k to j</p>
+<p>ax.arrow(x_k, y_bot, -(x_k - x_j - 0.3), 0, head_width=0.2, head_length=0.3, fc='k', ec='k', length_includes_head=True)</p>
+<p>ax.text((x_k + x_j) / 2, y_bot + 0.3, 'o', ha='center', fontsize=12)</p>
+<p>plt.title("Vertically Composed MSC", fontsize=14, pad=20)</p>
+<p>plt.tight_layout()</p>
+<p>plt.show()</p>
+<p>draw_msc_composition()</p>
+<p>```</p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image18.png" style="width:3.17014in;height:2.37804in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image19.png" style="width:2.85076in;height:2.13846in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image20.png" style="width:3.06245in;height:2.29726in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image21.png" style="width:3.05475in;height:2.29149in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image22.png" style="width:3.03168in;height:2.27418in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image23.png" style="width:2.8405in;height:2.13077in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image22.png" style="width:2.77783in;height:2.08376in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image24.png" style="width:2.72399in;height:2.04337in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image25.png" style="width:2.73796in;height:2.05385in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image26.png" style="width:3.13788in;height:2.35385in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image27.png" style="width:3.29322in;height:2.47037in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image28.png" style="width:3.21992in;height:2.41538in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image29.png" style="width:2.88152in;height:2.16154in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image30.png" style="width:3.0086in;height:2.25687in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-5/media/image31.png" style="width:3.04559in;height:2.28462in"/></p>
+<p>Question:</p>
+<p>What is the order between internal event a and receiving o in the vertically composed MSC.</p>
+<p>Answer:</p>
+<p>Based on the rules of vertical composition for Message Sequence Charts (MSCs):</p>
+<p>1. **Vertical Composition:** This operation concatenates the two charts. The events in the top chart (`msc first`) occur before the events in the bottom chart (`msc second`) on each respective lifeline.</p>
+<p>2. **Analysis of Events:**</p>
+<p>* **Internal event `a`:** This event is located on lifeline `k` in `msc first`.</p>
+<p>* **Message `o`:** In `msc second`, message `o` is sent from lifeline `k` to lifeline `j`.</p>
+<p>3. **Causal Ordering:**</p>
+<p>* On lifeline `k`, the internal event `a` (from `msc first`) appears above the sending of message `o` (from `msc second`). Therefore, `a` happens before `o` is sent.</p>
+<p>* By the nature of message passing, a message must be sent before it can be received. Therefore, sending `o` happens before receiving `o`.</p>
+<p>* Combining these, we get the chain: **`a` $\rightarrow$ send(`o`) $\rightarrow$ receive(`o`)**.</p>
+<p>**Conclusion:**</p>
+<p>The internal event **a happens before** receiving message **o**.</p>
+</section></main><footer class="site-footer"><div><p>Static replication package site generated from the supplied PDF and ZIP archive. Available data files are included in <code>data/</code>; Word documents are provided as uniformly styled HTML pages.</p></div></footer></body></html>

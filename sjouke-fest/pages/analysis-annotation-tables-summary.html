@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Analysis / annotation_tables_summary.docx | HMSC Experiments Replication Package</title>
+<link href="../assets/style.css" rel="stylesheet"/></head>
+<body><a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="bar"><a class="brand" href="../index.html"><span class="brand-mark">K</span><span class="brand-text"><strong>HMSC Experiments</strong><span>Replication package website</span></span></a><nav class="primary"><a href="../index.html">Overview</a><a href="../browse/index.html">Browse data</a></nav></div></header>
+<main id="main"><p class="breadcrumbs"><a href="../index.html">Overview</a> / <a href="../browse/index.html">Browse data</a> / Converted Word document</p>
+<h1>Analysis / annotation_tables_summary.docx</h1>
+<div class="button-row"><a class="button light" href="../browse/index.html">Back to data browser</a></div>
+<div class="notice small">This page is a uniformly styled HTML rendering of the original Word file. The original Word file is retained in the data folder for verification.</div>
+<section class="doc-content"><p><strong>Question:</strong></p>
+<p>Based on these annotations. Please analyse the accuracy of each and every LLM per task type in a separate table. Please also produce a table summarising the performance of all LLMs per task type and per Example. Please note that "Judgment" and "Judgement" should be considered the same in counting the number of correct and incorrect tasks. If there is any discrepancy among the number or type of tasks across models, please report them. Please note that all models should be tested on the same (number of) tasks.</p>
+<p><strong>Answer:</strong></p>
+<p>I’ll treat “Judgment” and “Judgement” as the same label, inspect every annotation file in the zip, and check whether each model has the same task coverage before calculating accuracy.</p>
+<p>I found 129 annotated task judgments across the 27 DOCX files. Coverage is balanced by model: each model has 43 judged tasks, with the same task counts per example.</p>
+<p>Thought for 2m 19s</p>
+<p>Done. I treated <strong>“Judgment”</strong> and <strong>“Judgement”</strong> as the same field, and counted any “Partially Incorrect” / “Incorrect?” as <strong>Incorrect</strong>.</p>
+<p>You can download the full workbook here:</p>
+<p>llm_annotation_accuracy_analysis.xlsx</p>
+<p><img src="../assets/doc-media/analysis-annotation-tables-summary/media/image1.png" style="width:8.52708in;height:4.17222in"/></p>
+<p>SummaryCoverage notesGPT-5.4-Thinking DeepGemini 3 - ThinkingQwen 3.6 Plus - ThinkingRaw extracted judgments</p>
+<h2 id="coverage-check">Coverage check</h2>
+<p>No discrepancy was found in the number of tasks across models after normalization.</p>
+<table>
+<colgroup>
+<col style="width: 82%"/>
+<col style="width: 17%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Check</strong></th>
+<th><strong>Result</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Total judged tasks</td>
+<td>129</td>
+</tr>
+<tr class="even">
+<td>Models</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>Judged tasks per model</td>
+<td>43</td>
+</tr>
+<tr class="even">
+<td>Examples per model</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>Unknown/unclassifiable judgments</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>I normalized these task-type variants for counting: <strong>“Identifying event order”</strong>, <strong>“Identifying event orders”</strong>, and <strong>“Event ordering”</strong> were counted as <strong>Identifying event orders</strong>. “Question type” was treated as equivalent to “Task type”.</p>
+<h2 id="gpt-5.4-thinking-deep-accuracy-by-task-type">GPT-5.4-Thinking Deep — accuracy by task type</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 40%"/>
+<col style="width: 14%"/>
+<col style="width: 17%"/>
+<col style="width: 10%"/>
+<col style="width: 18%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Task type</strong></th>
+<th><strong>Correct</strong></th>
+<th><strong>Incorrect</strong></th>
+<th><strong>Total</strong></th>
+<th><strong>Accuracy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Identifying events</td>
+<td>3</td>
+<td>1</td>
+<td>4</td>
+<td>75.0%</td>
+</tr>
+<tr class="even">
+<td>Identifying event orders</td>
+<td>5</td>
+<td>2</td>
+<td>7</td>
+<td>71.4%</td>
+</tr>
+<tr class="odd">
+<td>Abstraction</td>
+<td>2</td>
+<td>8</td>
+<td>10</td>
+<td>20.0%</td>
+</tr>
+<tr class="even">
+<td>Traces</td>
+<td>3</td>
+<td>1</td>
+<td>4</td>
+<td>75.0%</td>
+</tr>
+<tr class="odd">
+<td>LTS</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>50.0%</td>
+</tr>
+<tr class="even">
+<td>Composition</td>
+<td>5</td>
+<td>9</td>
+<td>14</td>
+<td>35.7%</td>
+</tr>
+<tr class="odd">
+<td><strong>Overall</strong></td>
+<td><strong>20</strong></td>
+<td><strong>23</strong></td>
+<td><strong>43</strong></td>
+<td><strong>46.5%</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="gemini-3---thinking-accuracy-by-task-type">Gemini 3 - Thinking — accuracy by task type</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 40%"/>
+<col style="width: 14%"/>
+<col style="width: 17%"/>
+<col style="width: 10%"/>
+<col style="width: 18%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Task type</strong></th>
+<th><strong>Correct</strong></th>
+<th><strong>Incorrect</strong></th>
+<th><strong>Total</strong></th>
+<th><strong>Accuracy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Identifying events</td>
+<td>4</td>
+<td>0</td>
+<td>4</td>
+<td>100.0%</td>
+</tr>
+<tr class="even">
+<td>Identifying event orders</td>
+<td>7</td>
+<td>0</td>
+<td>7</td>
+<td>100.0%</td>
+</tr>
+<tr class="odd">
+<td>Abstraction</td>
+<td>1</td>
+<td>9</td>
+<td>10</td>
+<td>10.0%</td>
+</tr>
+<tr class="even">
+<td>Traces</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>50.0%</td>
+</tr>
+<tr class="odd">
+<td>LTS</td>
+<td>0</td>
+<td>4</td>
+<td>4</td>
+<td>0.0%</td>
+</tr>
+<tr class="even">
+<td>Composition</td>
+<td>10</td>
+<td>4</td>
+<td>14</td>
+<td>71.4%</td>
+</tr>
+<tr class="odd">
+<td><strong>Overall</strong></td>
+<td><strong>24</strong></td>
+<td><strong>19</strong></td>
+<td><strong>43</strong></td>
+<td><strong>55.8%</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="qwen-3.6-plus---thinking-accuracy-by-task-type">Qwen 3.6 Plus - Thinking — accuracy by task type</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 40%"/>
+<col style="width: 14%"/>
+<col style="width: 17%"/>
+<col style="width: 10%"/>
+<col style="width: 18%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Task type</strong></th>
+<th><strong>Correct</strong></th>
+<th><strong>Incorrect</strong></th>
+<th><strong>Total</strong></th>
+<th><strong>Accuracy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Identifying events</td>
+<td>4</td>
+<td>0</td>
+<td>4</td>
+<td>100.0%</td>
+</tr>
+<tr class="even">
+<td>Identifying event orders</td>
+<td>6</td>
+<td>1</td>
+<td>7</td>
+<td>85.7%</td>
+</tr>
+<tr class="odd">
+<td>Abstraction</td>
+<td>3</td>
+<td>7</td>
+<td>10</td>
+<td>30.0%</td>
+</tr>
+<tr class="even">
+<td>Traces</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>50.0%</td>
+</tr>
+<tr class="odd">
+<td>LTS</td>
+<td>1</td>
+<td>3</td>
+<td>4</td>
+<td>25.0%</td>
+</tr>
+<tr class="even">
+<td>Composition</td>
+<td>5</td>
+<td>9</td>
+<td>14</td>
+<td>35.7%</td>
+</tr>
+<tr class="odd">
+<td><strong>Overall</strong></td>
+<td><strong>21</strong></td>
+<td><strong>22</strong></td>
+<td><strong>43</strong></td>
+<td><strong>48.8%</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary-performance-by-task-type">Summary performance by task type</h2>
+<table>
+<colgroup>
+<col style="width: 16%"/>
+<col style="width: 15%"/>
+<col style="width: 13%"/>
+<col style="width: 15%"/>
+<col style="width: 12%"/>
+<col style="width: 14%"/>
+<col style="width: 11%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Task type</strong></th>
+<th><strong>GPT-5.4 correct/total</strong></th>
+<th><strong>GPT-5.4 accuracy</strong></th>
+<th><strong>Gemini correct/total</strong></th>
+<th><strong>Gemini accuracy</strong></th>
+<th><strong>Qwen correct/total</strong></th>
+<th><strong>Qwen accuracy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Identifying events</td>
+<td>3/4</td>
+<td>75.0%</td>
+<td>4/4</td>
+<td>100.0%</td>
+<td>4/4</td>
+<td>100.0%</td>
+</tr>
+<tr class="even">
+<td>Identifying event orders</td>
+<td>5/7</td>
+<td>71.4%</td>
+<td>7/7</td>
+<td>100.0%</td>
+<td>6/7</td>
+<td>85.7%</td>
+</tr>
+<tr class="odd">
+<td>Abstraction</td>
+<td>2/10</td>
+<td>20.0%</td>
+<td>1/10</td>
+<td>10.0%</td>
+<td>3/10</td>
+<td>30.0%</td>
+</tr>
+<tr class="even">
+<td>Traces</td>
+<td>3/4</td>
+<td>75.0%</td>
+<td>2/4</td>
+<td>50.0%</td>
+<td>2/4</td>
+<td>50.0%</td>
+</tr>
+<tr class="odd">
+<td>LTS</td>
+<td>2/4</td>
+<td>50.0%</td>
+<td>0/4</td>
+<td>0.0%</td>
+<td>1/4</td>
+<td>25.0%</td>
+</tr>
+<tr class="even">
+<td>Composition</td>
+<td>5/14</td>
+<td>35.7%</td>
+<td>10/14</td>
+<td>71.4%</td>
+<td>5/14</td>
+<td>35.7%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary-performance-by-example">Summary performance by example</h2>
+<table>
+<colgroup>
+<col style="width: 7%"/>
+<col style="width: 17%"/>
+<col style="width: 14%"/>
+<col style="width: 16%"/>
+<col style="width: 14%"/>
+<col style="width: 15%"/>
+<col style="width: 13%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Example</strong></th>
+<th><strong>GPT-5.4 correct/total</strong></th>
+<th><strong>GPT-5.4 accuracy</strong></th>
+<th><strong>Gemini correct/total</strong></th>
+<th><strong>Gemini accuracy</strong></th>
+<th><strong>Qwen correct/total</strong></th>
+<th><strong>Qwen accuracy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>4/7</td>
+<td>57.1%</td>
+<td>2/7</td>
+<td>28.6%</td>
+<td>2/7</td>
+<td>28.6%</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>5/7</td>
+<td>71.4%</td>
+<td>5/7</td>
+<td>71.4%</td>
+<td>4/7</td>
+<td>57.1%</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>4/7</td>
+<td>57.1%</td>
+<td>2/7</td>
+<td>28.6%</td>
+<td>3/7</td>
+<td>42.9%</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>1/4</td>
+<td>25.0%</td>
+<td>4/4</td>
+<td>100.0%</td>
+<td>3/4</td>
+<td>75.0%</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>2/4</td>
+<td>50.0%</td>
+<td>3/4</td>
+<td>75.0%</td>
+<td>2/4</td>
+<td>50.0%</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>1/4</td>
+<td>25.0%</td>
+<td>2/4</td>
+<td>50.0%</td>
+<td>0/4</td>
+<td>0.0%</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>1/1</td>
+<td>100.0%</td>
+<td>1/1</td>
+<td>100.0%</td>
+<td>0/1</td>
+<td>0.0%</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>0/1</td>
+<td>0.0%</td>
+<td>0/1</td>
+<td>0.0%</td>
+<td>0/1</td>
+<td>0.0%</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>2/8</td>
+<td>25.0%</td>
+<td>5/8</td>
+<td>62.5%</td>
+<td>7/8</td>
+<td>87.5%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="key-takeaways">Key takeaways</h2>
+<p>Gemini has the best overall accuracy at <strong>55.8%</strong>, followed by Qwen at <strong>48.8%</strong>, then GPT-5.4 at <strong>46.5%</strong>.</p>
+<p>Gemini is strongest on <strong>event identification/order</strong> and <strong>composition</strong>, but weakest on <strong>LTS</strong> and <strong>abstraction</strong>. Qwen is best on <strong>abstraction</strong> among the three, though still low at <strong>30.0%</strong>. GPT-5.4 is comparatively strongest on <strong>traces</strong> and <strong>identifying events</strong>, but weak on <strong>abstraction</strong> and <strong>composition</strong>.</p>
+<p><strong>Question:</strong></p>
+<p>Please extract these into a Word and a LaTex file.</p>
+<p><strong>Answer:</strong></p>
+<p>Summary of Annotation Tables</p>
+<p>This document summarises the annotation-derived performance tables. The analysis treats “Judgment” and “Judgement” as the same field and counts partially incorrect judgements as incorrect. Task-type variants were normalised, including variants of event ordering.</p>
+<h1 id="coverage-and-normalisation">Coverage and Normalisation</h1>
+<table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Item</strong></th>
+<th><strong>Finding</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Total judgments</td>
+<td>129 judged tasks across 27 DOCX files.</td>
+</tr>
+<tr class="even">
+<td>Per-model judgments</td>
+<td>43 judged tasks per model.</td>
+</tr>
+<tr class="odd">
+<td>Coverage</td>
+<td>No discrepancy found in number of tasks per model, per task type, or per example after normalization.</td>
+</tr>
+<tr class="even">
+<td>Judgment/Judgement</td>
+<td>Both spellings were treated identically. Raw headers: judgment=115; judgement=14.</td>
+</tr>
+<tr class="odd">
+<td>Task-type normalization</td>
+<td>Identifying event order, Identifying event orders, and Event ordering were counted as Identifying event orders; Identifying events. was counted as Identifying events; Question type was treated as Task type.</td>
+</tr>
+<tr class="even">
+<td>Unknown labels</td>
+<td>None. All judgments were classifiable as Correct or Incorrect.</td>
+</tr>
+<tr class="odd">
+<td>Partially incorrect</td>
+<td>Counted as Incorrect because it contains an incorrect judgment.</td>
+</tr>
+<tr class="even">
+<td colspan="2"><strong>Coverage finding:</strong> The dataset is balanced: 129 judged tasks, 43 tasks per model, and no observed discrepancy in task counts by model, task type, or example.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="accuracy-by-model-and-task-type">Accuracy by Model and Task Type</h1>
+<h3 id="gpt-5.4-thinking-deep">GPT-5.4-Thinking Deep</h3>
+<table>
+<colgroup>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Task type</strong></th>
+<th><strong>Correct</strong></th>
+<th><strong>Incorrect</strong></th>
+<th><strong>Total</strong></th>
+<th><strong>Accuracy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Identifying events</td>
+<td>3</td>
+<td>1</td>
+<td>4</td>
+<td>75.0%</td>
+</tr>
+<tr class="even">
+<td>Identifying event orders</td>
+<td>5</td>
+<td>2</td>
+<td>7</td>
+<td>71.4%</td>
+</tr>
+<tr class="odd">
+<td>Abstraction</td>
+<td>2</td>
+<td>8</td>
+<td>10</td>
+<td>20.0%</td>
+</tr>
+<tr class="even">
+<td>Traces</td>
+<td>3</td>
+<td>1</td>
+<td>4</td>
+<td>75.0%</td>
+</tr>
+<tr class="odd">
+<td>LTS</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>50.0%</td>
+</tr>
+<tr class="even">
+<td>Composition</td>
+<td>5</td>
+<td>9</td>
+<td>14</td>
+<td>35.7%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gemini-3---thinking">Gemini 3 - Thinking</h3>
+<table>
+<colgroup>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Task type</strong></th>
+<th><strong>Correct</strong></th>
+<th><strong>Incorrect</strong></th>
+<th><strong>Total</strong></th>
+<th><strong>Accuracy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Identifying events</td>
+<td>4</td>
+<td>0</td>
+<td>4</td>
+<td>100.0%</td>
+</tr>
+<tr class="even">
+<td>Identifying event orders</td>
+<td>7</td>
+<td>0</td>
+<td>7</td>
+<td>100.0%</td>
+</tr>
+<tr class="odd">
+<td>Abstraction</td>
+<td>1</td>
+<td>9</td>
+<td>10</td>
+<td>10.0%</td>
+</tr>
+<tr class="even">
+<td>Traces</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>50.0%</td>
+</tr>
+<tr class="odd">
+<td>LTS</td>
+<td>0</td>
+<td>4</td>
+<td>4</td>
+<td>0.0%</td>
+</tr>
+<tr class="even">
+<td>Composition</td>
+<td>10</td>
+<td>4</td>
+<td>14</td>
+<td>71.4%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="qwen-3.6-plus---thinking">Qwen 3.6 Plus - Thinking</h3>
+<table>
+<colgroup>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Task type</strong></th>
+<th><strong>Correct</strong></th>
+<th><strong>Incorrect</strong></th>
+<th><strong>Total</strong></th>
+<th><strong>Accuracy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Identifying events</td>
+<td>4</td>
+<td>0</td>
+<td>4</td>
+<td>100.0%</td>
+</tr>
+<tr class="even">
+<td>Identifying event orders</td>
+<td>6</td>
+<td>1</td>
+<td>7</td>
+<td>85.7%</td>
+</tr>
+<tr class="odd">
+<td>Abstraction</td>
+<td>3</td>
+<td>7</td>
+<td>10</td>
+<td>30.0%</td>
+</tr>
+<tr class="even">
+<td>Traces</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>50.0%</td>
+</tr>
+<tr class="odd">
+<td>LTS</td>
+<td>1</td>
+<td>3</td>
+<td>4</td>
+<td>25.0%</td>
+</tr>
+<tr class="even">
+<td>Composition</td>
+<td>5</td>
+<td>9</td>
+<td>14</td>
+<td>35.7%</td>
+</tr>
+</tbody>
+</table>
+<h1 id="cross-model-summary-by-task-type">Cross-Model Summary by Task Type</h1>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%"/>
+<col style="width: 14%"/>
+<col style="width: 14%"/>
+<col style="width: 14%"/>
+<col style="width: 14%"/>
+<col style="width: 14%"/>
+<col style="width: 14%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Task type</strong></th>
+<th><strong>GPT-5.4 correct/total</strong></th>
+<th><strong>GPT-5.4 accuracy</strong></th>
+<th><strong>Gemini correct/total</strong></th>
+<th><strong>Gemini accuracy</strong></th>
+<th><strong>Qwen correct/total</strong></th>
+<th><strong>Qwen accuracy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Identifying events</td>
+<td>3/4</td>
+<td>75.0%</td>
+<td>4/4</td>
+<td>100.0%</td>
+<td>4/4</td>
+<td>100.0%</td>
+</tr>
+<tr class="even">
+<td>Identifying event orders</td>
+<td>5/7</td>
+<td>71.4%</td>
+<td>7/7</td>
+<td>100.0%</td>
+<td>6/7</td>
+<td>85.7%</td>
+</tr>
+<tr class="odd">
+<td>Abstraction</td>
+<td>2/10</td>
+<td>20.0%</td>
+<td>1/10</td>
+<td>10.0%</td>
+<td>3/10</td>
+<td>30.0%</td>
+</tr>
+<tr class="even">
+<td>Traces</td>
+<td>3/4</td>
+<td>75.0%</td>
+<td>2/4</td>
+<td>50.0%</td>
+<td>2/4</td>
+<td>50.0%</td>
+</tr>
+<tr class="odd">
+<td>LTS</td>
+<td>2/4</td>
+<td>50.0%</td>
+<td>0/4</td>
+<td>0.0%</td>
+<td>1/4</td>
+<td>25.0%</td>
+</tr>
+<tr class="even">
+<td>Composition</td>
+<td>5/14</td>
+<td>35.7%</td>
+<td>10/14</td>
+<td>71.4%</td>
+<td>5/14</td>
+<td>35.7%</td>
+</tr>
+</tbody>
+</table>
+<h1 id="cross-model-summary-by-example">Cross-Model Summary by Example</h1>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%"/>
+<col style="width: 14%"/>
+<col style="width: 14%"/>
+<col style="width: 14%"/>
+<col style="width: 14%"/>
+<col style="width: 14%"/>
+<col style="width: 14%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Example</strong></th>
+<th><strong>GPT-5.4 correct/total</strong></th>
+<th><strong>GPT-5.4 accuracy</strong></th>
+<th><strong>Gemini correct/total</strong></th>
+<th><strong>Gemini accuracy</strong></th>
+<th><strong>Qwen correct/total</strong></th>
+<th><strong>Qwen accuracy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>4/7</td>
+<td>57.1%</td>
+<td>2/7</td>
+<td>28.6%</td>
+<td>2/7</td>
+<td>28.6%</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>5/7</td>
+<td>71.4%</td>
+<td>5/7</td>
+<td>71.4%</td>
+<td>4/7</td>
+<td>57.1%</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>4/7</td>
+<td>57.1%</td>
+<td>2/7</td>
+<td>28.6%</td>
+<td>3/7</td>
+<td>42.9%</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>1/4</td>
+<td>25.0%</td>
+<td>4/4</td>
+<td>100.0%</td>
+<td>3/4</td>
+<td>75.0%</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>2/4</td>
+<td>50.0%</td>
+<td>3/4</td>
+<td>75.0%</td>
+<td>2/4</td>
+<td>50.0%</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>1/4</td>
+<td>25.0%</td>
+<td>2/4</td>
+<td>50.0%</td>
+<td>0/4</td>
+<td>0.0%</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>1/1</td>
+<td>100.0%</td>
+<td>1/1</td>
+<td>100.0%</td>
+<td>0/1</td>
+<td>0.0%</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>0/1</td>
+<td>0.0%</td>
+<td>0/1</td>
+<td>0.0%</td>
+<td>0/1</td>
+<td>0.0%</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>2/8</td>
+<td>25.0%</td>
+<td>5/8</td>
+<td>62.5%</td>
+<td>7/8</td>
+<td>87.5%</td>
+</tr>
+</tbody>
+</table>
+<h1 id="task-count-coverage-checks">Task Count Coverage Checks</h1>
+<h3 id="coverage-by-task-type">Coverage by task type</h3>
+<table>
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Task type</strong></th>
+<th><strong>GPT-5.4</strong></th>
+<th><strong>Gemini</strong></th>
+<th><strong>Qwen</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Identifying events</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>Identifying event orders</td>
+<td>7</td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td>Abstraction</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>Traces</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>LTS</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>Composition</td>
+<td>14</td>
+<td>14</td>
+<td>14</td>
+</tr>
+</tbody>
+</table>
+<h3 id="coverage-by-example">Coverage by example</h3>
+<table>
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Example</strong></th>
+<th><strong>GPT-5.4</strong></th>
+<th><strong>Gemini</strong></th>
+<th><strong>Qwen</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>7</td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>7</td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>7</td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<h1 id="interpretive-summary">Interpretive Summary</h1>
+<ul>
+<li><p>Gemini 3 - Thinking had the highest overall accuracy at 55.8%, followed by Qwen 3.6 Plus - Thinking at 48.8% and GPT-5.4-Thinking Deep at 46.5%.</p></li>
+<li><p>All models performed well on basic MSC semantic tasks, especially identifying events and event orders.</p></li>
+<li><p>Abstraction was the most difficult task category across all models, with only 20.0% aggregate accuracy.</p></li>
+<li><p>LTS reasoning was also a recurring weakness, with 25.0% aggregate accuracy.</p></li>
+<li><p>Composition was model-dependent: Gemini performed strongly at 71.4%, while GPT-5.4 and Qwen both scored 35.7%.</p></li>
+</ul>
+</section></main><footer class="site-footer"><div><p>Static replication package site generated from the supplied PDF and ZIP archive. Available data files are included in <code>data/</code>; Word documents are provided as uniformly styled HTML pages.</p></div></footer></body></html>

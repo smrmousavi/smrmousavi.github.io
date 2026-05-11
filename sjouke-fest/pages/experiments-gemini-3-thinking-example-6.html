@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Experiments / Gemini 3 - Thinking / Example 6.docx | HMSC Experiments Replication Package</title>
+<link href="../assets/style.css" rel="stylesheet"/></head>
+<body><a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="bar"><a class="brand" href="../index.html"><span class="brand-mark">K</span><span class="brand-text"><strong>HMSC Experiments</strong><span>Replication package website</span></span></a><nav class="primary"><a href="../index.html">Overview</a><a href="../browse/index.html">Browse data</a></nav></div></header>
+<main id="main"><p class="breadcrumbs"><a href="../index.html">Overview</a> / <a href="../browse/index.html">Browse data</a> / Converted Word document</p>
+<h1>Experiments / Gemini 3 - Thinking / Example 6.docx</h1>
+<div class="button-row"><a class="button light" href="../browse/index.html">Back to data browser</a></div>
+<div class="notice small">This page is a uniformly styled HTML rendering of the original Word file. The original Word file is retained in the data folder for verification.</div>
+<section class="doc-content"><p><strong>Question:</strong> Consider the following two message sequence charts labelled "first" and "second"; compose them horizontally and draw the resulting composed message sequence chart.</p>
+<p><img src="../assets/doc-media/experiments-gemini-3-thinking-example-6/media/image1.png" style="width:6.27014in;height:2.48542in"/></p>
+<p><strong>Answer:</strong></p>
+<p>To compose the message sequence charts (MSCs) <strong>first</strong> and <strong>second</strong> horizontally, we merge the shared process (lifeline $j$) and include the unique processes ($i$ and $k$) to create a single diagram with three lifelines.</p>
+<p>Horizontal composition typically implies that the behaviors occurring on the different lifelines are concurrent, except where they are synchronized by shared processes or message exchanges. In this case, process $j$ is the common link.</p>
+<h3 id="composed-message-sequence-chart">Composed Message Sequence Chart</h3>
+<p>The resulting chart features the processes $i$, $j$, and $k$ side-by-side. The messages from both original charts are represented on their respective lifelines.</p>
+<p>Python</p>
+<p>import matplotlib.pyplot as plt</p>
+<p>def draw_composed_msc():</p>
+<p>fig, ax = plt.subplots(figsize=(8, 6))</p>
+<p># Process lifelines positions</p>
+<p>x_i, x_j, x_k = 1, 3, 5</p>
+<p># Draw lifelines</p>
+<p>for x, label in [(x_i, 'i'), (x_j, 'j'), (x_k, 'k')]:</p>
+<p>ax.plot([x, x], [1, 9], color='black', linewidth=1)</p>
+<p># Top boxes</p>
+<p>ax.add_patch(plt.Rectangle((x - 0.4, 8.5), 0.8, 0.5, fill=False, color='black'))</p>
+<p>ax.text(x, 8.75, label, ha='center', va='center', fontsize=14, fontweight='bold', style='italic')</p>
+<p># Bottom boxes</p>
+<p>ax.add_patch(plt.Rectangle((x - 0.4, 1), 0.8, 0.5, fill=True, color='black'))</p>
+<p># Draw Messages from 'first' (m and n)</p>
+<p># m: i -&gt; j</p>
+<p>ax.annotate('', xy=(x_j, 7.5), xytext=(x_i, 7.5),</p>
+<p>arrowprops=dict(arrowstyle='-|&gt;', color='black'))</p>
+<p>ax.text((x_i + x_j)/2, 7.7, 'm', ha='center', fontsize=14, fontweight='bold', style='italic')</p>
+<p># n: j -&gt; i</p>
+<p>ax.annotate('', xy=(x_i, 6.5), xytext=(x_j, 6.5),</p>
+<p>arrowprops=dict(arrowstyle='-|&gt;', color='black'))</p>
+<p>ax.text((x_i + x_j)/2, 6.7, 'n', ha='center', fontsize=14, fontweight='bold', style='italic')</p>
+<p># Draw Messages from 'second' (o and p)</p>
+<p># o: j -&gt; k</p>
+<p>ax.annotate('', xy=(x_k, 5.5), xytext=(x_j, 5.5),</p>
+<p>arrowprops=dict(arrowstyle='-|&gt;', color='black'))</p>
+<p>ax.text((x_j + x_k)/2, 5.7, 'o', ha='center', fontsize=14, fontweight='bold', style='italic')</p>
+<p># p: k -&gt; j</p>
+<p>ax.annotate('', xy=(x_j, 4.5), xytext=(x_k, 4.5),</p>
+<p>arrowprops=dict(arrowstyle='-|&gt;', color='black'))</p>
+<p>ax.text((x_j + x_k)/2, 4.7, 'p', ha='center', fontsize=14, fontweight='bold', style='italic')</p>
+<p># Title</p>
+<p>ax.text(3, 9.5, 'msc composed', ha='center', fontsize=16, fontweight='bold', style='italic')</p>
+<p># Formatting</p>
+<p>ax.set_xlim(0, 6)</p>
+<p>ax.set_ylim(0, 10)</p>
+<p>ax.axis('off')</p>
+<p>plt.savefig('composed_msc.png', bbox_inches='tight')</p>
+<p>plt.show()</p>
+<p>draw_composed_msc()</p>
+<p>Code output</p>
+<p>has vm saved</p>
+<p><img src="../assets/doc-media/experiments-gemini-3-thinking-example-6/media/image2.png" style="width:5.33056in;height:4.01806in"/></p>
+<p><strong>The horizontal composition of MSC <em>first</em> and MSC <em>second</em> results in a single chart with three lifelines: $i$, $j$, and $k$.</strong> In this composition:</p>
+<ul>
+<li><p><strong>Lifeline $i$</strong> retains its interactions from <em>first</em> (sending $m$ and receiving $n$).</p></li>
+<li><p><strong>Lifeline $j$</strong> acts as the shared process, incorporating interactions from both charts.</p></li>
+<li><p><strong>Lifeline $k$</strong> retains its interactions from <em>second</em> (receiving $o$ and sending $p$).</p></li>
+</ul>
+<p>The final diagram illustrates all four message exchanges ($m$, $n$, $o$, $p$) integrated into a single system view.</p>
+<p><strong>Question:</strong> What is the order between sending m and receiving p in the composed diagram.</p>
+<p><strong>Answer:</strong></p>
+<p>I In the composed diagram, the event of <strong>sending $m$</strong> occurs before the event of <strong>receiving $p$</strong>. This is determined by the <strong>happens-before relation</strong> ($\prec$), which defines a partial ordering of events in a distributed system or a Message Sequence Chart.</p>
+<p>The causal chain that links these two events is as follows:</p>
+<ol type="1">
+<li><p><strong>Message Causality:</strong> The event $send(m)$ on lifeline $i$ must happen before $receive(m)$ on lifeline $j$.</p>
+<ul>
+<li><p>$send(m) \prec receive(m)$</p></li>
+</ul></li>
+<li><p><strong>Lifeline Ordering:</strong> On the shared lifeline $j$, events are executed sequentially from top to bottom. Since MSC <em>first</em> is composed with MSC <em>second</em>, the events from the first chart precede those of the second on the shared lifeline.</p>
+<ul>
+<li><p>$receive(m) \prec send(o)$</p></li>
+<li><p>$send(o) \prec receive(p)$ (or more specifically, $receive(m) \prec receive(p)$ via the sequence of events on $j$).</p></li>
+</ul></li>
+<li><p><strong>Transitivity:</strong> Because the "happens-before" relation is transitive, if $A \prec B$ and $B \prec C$, then $A \prec C$.</p>
+<ul>
+<li><p>Since $send(m) \prec receive(m)$ and $receive(m) \prec receive(p)$, it follows that <strong>$send(m) \prec receive(p)$</strong>.</p></li>
+</ul></li>
+</ol>
+<p><strong>Summary of the Causal Path</strong></p>
+<p>The order is strictly enforced through <strong>lifeline $j$</strong>, which acts as the synchronization point between the two original charts. Without lifeline $j$ (if the two charts shared no processes), the events $send(m)$ and $receive(p)$ would be concurrent (unordered) because there would be no path of messages or lifeline sequences connecting them.</p>
+<p>Question:</p>
+<p>Please consider the original two MSCs labelled "first" and "second", given here again. Please compose them vertically (by putting "first" on top and "second" at the bottom). Please draw the resulting composed diagram.</p>
+<p><img src="../assets/doc-media/experiments-gemini-3-thinking-example-6/media/image1.png" style="width:6.27014in;height:2.48542in"/></p>
+<p>Answer:</p>
+<p><img src="../assets/doc-media/experiments-gemini-3-thinking-example-6/media/image3.png" style="width:6.27014in;height:2.48611in"/></p>
+<p><strong>Question:</strong></p>
+<p>What is the order between receiving n and receiving p in the vertically-composed MSC.</p>
+<p><strong>Answer:</strong></p>
+<p>In the vertically composed Message Sequence Chart (MSC), the events <strong>receiving $n$</strong> (on lifeline $i$) and <strong>receiving $p$</strong> (on lifeline $j$) are <strong>unordered</strong> (or <strong>concurrent</strong>).</p>
+<p>In formal terms, there is no "happens-before" relation ($\prec$) between these two specific events. Here is the breakdown of why:</p>
+<p><strong>1. The Principle of Weak Sequential Composition</strong></p>
+<p>Vertical composition of MSCs generally follows <strong>weak sequential composition</strong>. This means that when you place MSC <em>second</em> after MSC <em>first</em>, the temporal ordering is only enforced <strong>per lifeline</strong>.</p>
+<ul>
+<li><p>On the shared lifeline $j$, the events from <em>first</em> must complete before the events from <em>second</em> begin.</p></li>
+<li><p>However, events on different lifelines (like lifeline $i$ and lifeline $k$) are only ordered if there is a direct chain of messages or lifeline sequences connecting them.</p></li>
+</ul>
+<p><strong>2. Tracing the Causal Chains</strong></p>
+<p>To see if one event must happen before the other, we look for a path of arrows:</p>
+<ul>
+<li><p><strong>Path to Receiving $n$:</strong> $send(m) \text{ on } i \prec receive(m) \text{ on } j \prec \mathbf{send(n) \text{ on } j \prec receive(n) \text{ on } i}$</p></li>
+<li><p><strong>Path to Receiving $p$:</strong> $send(m) \text{ on } i \prec receive(m) \text{ on } j \prec \mathbf{send(n) \text{ on } j \prec send(o) \text{ on } j \prec receive(o) \text{ on } k \prec send(p) \text{ on } k \prec receive(p) \text{ on } j}$</p></li>
+</ul>
+<p><strong>3. Comparison</strong></p>
+<p>As shown in the paths above:</p>
+<ul>
+<li><p>Both events share a common ancestor: <strong>$send(n)$ on lifeline $j$</strong>.</p></li>
+<li><p>After $send(n)$ occurs, the system "splits." One path stays on lifeline $i$ to complete the reception of $n$. The other path continues on lifeline $j$ (and $k$) to process messages $o$ and $p$.</p></li>
+<li><p>There is no message sent from lifeline $i$ <em>after</em> it receives $n$ that would signal lifeline $j$ to receive $p$.</p></li>
+</ul>
+<p>Because neither event is a prerequisite for the other, they are logically <strong>concurrent</strong>. In a real-time execution, $receive(n)$ could happen before, after, or at the same time as $receive(p)$, depending on network latency and processing speeds.</p>
+<p><strong>.</strong></p>
+</section></main><footer class="site-footer"><div><p>Static replication package site generated from the supplied PDF and ZIP archive. Available data files are included in <code>data/</code>; Word documents are provided as uniformly styled HTML pages.</p></div></footer></body></html>

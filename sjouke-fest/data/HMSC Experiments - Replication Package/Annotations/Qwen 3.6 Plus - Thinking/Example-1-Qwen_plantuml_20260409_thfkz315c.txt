@@ -1,0 +1,34 @@
+@startuml
+title msc example1 (abstracted m2)
+autonumber
+
+' Define participants
+participant i1
+participant i2
+participant i3
+participant i4
+boundary Environment
+
+' i1 outputs m0 to the environment
+i1 -> Environment: m0
+
+' i1 sends m1 to i2
+i1 -> i2: m1
+
+' Local action 'a' on i2
+' (Originally this was after m2, now it is just after m1)
+note right of i2: action a
+
+' m2 is ABSTRACTED AWAY (Removed)
+' i2 -> i3: m2  <-- DELETED
+' i3 receives m2 <-- DELETED
+
+' i2 sends m4 back to i1
+i2 -> i1: m4
+
+' i3 sends m3 to i4
+' (Originally this happened after receiving m2. 
+' Now it is independent and can happen concurrently with the i1/i2 interactions)
+i3 -> i4: m3
+
+@enduml

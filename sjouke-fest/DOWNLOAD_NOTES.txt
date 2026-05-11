@@ -1,0 +1,4 @@
+This lightweight website package excludes the large unmodified source ZIP and the original DOCX files to keep the archive downloadable in ChatGPT.
+
+All Word documents have been converted to uniformly styled HTML pages in this website, and the original folder/data structure is browsable through the site.
+Raw data ZIP link: the landing page points to data/OneDrive_2026-05-11.zip. Upload the raw data archive to that path to activate the link.

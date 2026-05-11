@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Experiments / GPT-5.4-Thinking Deep / Example 5.docx | HMSC Experiments Replication Package</title>
+<link href="../assets/style.css" rel="stylesheet"/></head>
+<body><a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="bar"><a class="brand" href="../index.html"><span class="brand-mark">K</span><span class="brand-text"><strong>HMSC Experiments</strong><span>Replication package website</span></span></a><nav class="primary"><a href="../index.html">Overview</a><a href="../browse/index.html">Browse data</a></nav></div></header>
+<main id="main"><p class="breadcrumbs"><a href="../index.html">Overview</a> / <a href="../browse/index.html">Browse data</a> / Converted Word document</p>
+<h1>Experiments / GPT-5.4-Thinking Deep / Example 5.docx</h1>
+<div class="button-row"><a class="button light" href="../browse/index.html">Back to data browser</a></div>
+<div class="notice small">This page is a uniformly styled HTML rendering of the original Word file. The original Word file is retained in the data folder for verification.</div>
+<section class="doc-content">[WARNING] Could not convert TeX math send(m)\text{\:\,} \parallel \text{\:\,}recv(o)
+  , rendering as TeX:
+  send(m)\text{\:\,} \parallel \text{\:\,}
+               ^
+  unexpected "\\"
+  expecting "}", text, "{", "$", "$$", "\\(" or "\\["
+[WARNING] Could not convert TeX math a\text{\:\,} \prec \text{\:\,}recv(o)
+  , rendering as TeX:
+  a\text{\:\,} \prec \text{\:\,}recv(o)
+         ^
+  unexpected "\\"
+  expecting "}", text, "{", "$", "$$", "\\(" or "\\["
+<p><strong>Question:</strong> Consider the following two message sequence charts labelled "first" and "second"; compose them horizontally and draw the resulting composed message sequence chart.</p>
+<p><img src="../assets/doc-media/experiments-gpt-5-4-thinking-deep-example-5/media/image1.png" style="width:6.27014in;height:1.89583in"/></p>
+<p><strong>Answer:</strong></p>
+<p>et us first restate what is in each MSC, based on the picture.</p>
+<p><strong>msc first</strong></p>
+<p>Instances: i, j, k</p>
+<ul>
+<li><p>Message m from i to j</p></li>
+<li><p>A local action a on instance k</p></li>
+<li><p>No ordering relation between m and a (they are concurrent)</p></li>
+</ul>
+<p><strong>msc second</strong></p>
+<p>Instances: i, j, k</p>
+<ul>
+<li><p>Message n from i to j</p></li>
+<li><p>Message o from k to j</p></li>
+<li><p>The send of n happens before the receive of o on j (since they are vertically ordered on j)</p></li>
+</ul>
+<p><strong>Horizontal composition</strong></p>
+<p>Horizontal composition places the two MSCs <strong>side by side</strong> and combines them into a single MSC with the <strong>same instances</strong>.</p>
+<p>Key semantic points:</p>
+<ul>
+<li><p>All ordering relations <strong>inside each MSC</strong> are preserved.</p></li>
+<li><p><strong>No new ordering relations</strong> are introduced between events coming from different MSCs.</p></li>
+<li><p>Thus, every event of msc first is <strong>concurrent</strong> with every event of msc second, unless they are already ordered within the same MSC.</p></li>
+</ul>
+<p><strong>Resulting composed MSC (ASCII sketch)</strong></p>
+<p>msc first || second</p>
+<p>i j k</p>
+<p>+-----+ +-----+ +-----+</p>
+<p>| | |</p>
+<p>|---- m ---------&gt;| |</p>
+<p>| | |</p>
+<p>| | | [a]</p>
+<p>| | |</p>
+<p>|---- n ---------&gt;|&lt;-------- o -----|</p>
+<p>| | |</p>
+<p>===== ===== =====</p>
+<p><strong>Ordering summary</strong></p>
+<p>Preserved orderings:</p>
+<ul>
+<li><p>send(m) ≺ recv(m)</p></li>
+<li><p>send(n) ≺ recv(n)</p></li>
+<li><p>send(o) ≺ recv(o)</p></li>
+<li><p>On instance j (from msc second):<br/>
+recv(n) ≺ recv(o)</p></li>
+</ul>
+<p>No ordering between:</p>
+<ul>
+<li><p>Any event of msc first (m, a) and any event of msc second (n, o)</p></li>
+<li><p>m and a</p></li>
+<li><p>n and o except as imposed on j</p></li>
+</ul>
+<p>If you like, I can also give the <strong>formal partial order</strong> or discuss <strong>linearizations (traces)</strong> of the composed MSC.</p>
+<p><img src="../assets/doc-media/experiments-gpt-5-4-thinking-deep-example-5/media/image2.png" style="width:6.27014in;height:4.17986in"/></p>
+<p>Please draw the resulting of MSC.</p>
+<p>The resulting horizontally composed MSC should have the <strong>same three instances</strong> i, j, and k, with the behaviour of both MSCs superimposed while preserving their internal orders.</p>
+<p>A clean textual sketch is:</p>
+<p>Plain Text</p>
+<p>msc first || second</p>
+<p>i j k</p>
+<p>+-----+ +-----+ +-----+</p>
+<p>| | |</p>
+<p>|---- m ---------&gt;| |</p>
+<p>|---- n ---------&gt;| |</p>
+<p>| | |</p>
+<p>| |&lt;-------- o -----|</p>
+<p>| | | [a]</p>
+<p>| | |</p>
+<p>===== ===== =====</p>
+<p>Show more lines</p>
+<p>So the composed chart contains:</p>
+<ul>
+<li><p>m : i → j</p></li>
+<li><p>n : i → j</p></li>
+<li><p>o : k → j</p></li>
+<li><p>local action a on k</p></li>
+</ul>
+<p>with the local ordering from second preserved on j, namely:</p>
+<p><span class="math display"><em>r</em><em>e</em><em>c</em><em>v</em>(<em>n</em>) ≺ <em>r</em><em>e</em><em>c</em><em>v</em>(<em>o</em>)</span></p>
+<p>and the local action a from first remaining on instance k.</p>
+<p><strong>Question:</strong> What is the order between sending m and receiving o in the composed diagram.</p>
+<p><strong>Answer:</strong></p>
+<p>In the <strong>horizontally composed</strong> MSC, there is <strong>no ordering constraint</strong> between</p>
+<ul>
+<li><p><strong>sending m</strong> (from instance i to j in <em>msc first</em>), and</p></li>
+<li><p><strong>receiving o</strong> (at instance j from k in <em>msc second</em>).</p></li>
+</ul>
+<p>Formally, their relation is:</p>
+<p><span class="math display">$$send(m)\text{\:\,} \parallel \text{\:\,}recv(o)
+$$</span></p>
+<h3 id="explanation">Explanation</h3>
+<ul>
+<li><p>Horizontal composition preserves <strong>only the internal orders</strong> of each MSC.</p></li>
+<li><p>send(m) belongs to <strong>msc first</strong>.</p></li>
+<li><p>recv(o) belongs to <strong>msc second</strong>.</p></li>
+<li><p>No rule of horizontal composition introduces ordering between events coming from different MSCs.</p></li>
+<li><p>Although both events involve instance j, they come from different MSCs, so <strong>no causal relation is implied</strong>.</p></li>
+</ul>
+<p>✅ <strong>Conclusion:</strong><br/>
+<strong>Sending m and receiving o are concurrent (unordered)</strong> in the composed diagram.</p>
+<p>Question:</p>
+<p>Please consider the original two MSCs labelled "first" and "second", given here again. Please compose them vertically (by putting "first" on top and "second" at the bottom). Please draw the resulting composed diagram<img src="../assets/doc-media/experiments-gpt-5-4-thinking-deep-example-5/media/image1.png" style="width:6.27014in;height:1.89583in"/></p>
+<p>Answer:</p>
+<p><img src="../assets/doc-media/experiments-gpt-5-4-thinking-deep-example-5/media/image3.png" style="width:6.27014in;height:4.17986in"/></p>
+<p>Here is the intended <strong>vertical composition</strong> of first ; second, with first above second:</p>
+<p>Plain Text</p>
+<p>msc first ; second</p>
+<p>i j k</p>
+<p>+-----+ +-----+ +-----+</p>
+<p>| | |</p>
+<p>|------ m ---------------&gt;| |</p>
+<p>| | |</p>
+<p>| | [ a ]</p>
+<p>| | |</p>
+<p>| | |</p>
+<p>|------ n ---------------&gt;| |</p>
+<p>| |&lt;-------------- o -------|</p>
+<p>| | |</p>
+<p>===== ===== =====</p>
+<p>Show more lines</p>
+<p>So the composed MSC contains:</p>
+<ul>
+<li><p>from first:</p>
+<ul>
+<li><p>m : i → j</p></li>
+<li><p>local action a on k</p></li>
+</ul></li>
+<li><p>from second:</p>
+<ul>
+<li><p>n : i → j</p></li>
+<li><p>o : k → j</p></li>
+</ul></li>
+</ul>
+<p>with all events of first ordered before all events of second.</p>
+<p>Question:</p>
+<p>What is the order between internal event a and receiving o in the vertically composed MSC.</p>
+<p>Answer:</p>
+<p>In the <strong>vertically composed MSC</strong> first ; second, the internal event a is in <strong>msc first</strong>, while receiving o is in <strong>msc second</strong>.</p>
+<p>Since vertical composition puts <strong>all events of first before all events of second</strong>, the ordering is:</p>
+<p><span class="math display">$$a\text{\:\,} \prec \text{\:\,}recv(o)
+$$</span></p>
+<p>So:</p>
+<p><strong>The internal event a strictly precedes the receiving of o.</strong></p>
+<p>Even though a occurs on instance k and recv(o) occurs on instance j, vertical composition introduces a global sequential ordering from the first MSC to the second MSC.</p>
+</section></main><footer class="site-footer"><div><p>Static replication package site generated from the supplied PDF and ZIP archive. Available data files are included in <code>data/</code>; Word documents are provided as uniformly styled HTML pages.</p></div></footer></body></html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Experiments / QWen3.6-Plus-Thinking / Example 6.docx | HMSC Experiments Replication Package</title>
+<link href="../assets/style.css" rel="stylesheet"/></head>
+<body><a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="bar"><a class="brand" href="../index.html"><span class="brand-mark">K</span><span class="brand-text"><strong>HMSC Experiments</strong><span>Replication package website</span></span></a><nav class="primary"><a href="../index.html">Overview</a><a href="../browse/index.html">Browse data</a></nav></div></header>
+<main id="main"><p class="breadcrumbs"><a href="../index.html">Overview</a> / <a href="../browse/index.html">Browse data</a> / Converted Word document</p>
+<h1>Experiments / QWen3.6-Plus-Thinking / Example 6.docx</h1>
+<div class="button-row"><a class="button light" href="../browse/index.html">Back to data browser</a></div>
+<div class="notice small">This page is a uniformly styled HTML rendering of the original Word file. The original Word file is retained in the data folder for verification.</div>
+<section class="doc-content"><p><strong>Question:</strong> Consider the following two message sequence charts labelled "first" and "second"; compose them horizontally and draw the resulting composed message sequence chart.</p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-6/media/image1.png" style="width:6.27014in;height:2.48542in"/></p>
+<p><strong>Answer:</strong></p>
+<p>Based on the standard rules for composing Message Sequence Charts (MSCs), **horizontal composition** (often referred to as parallel composition) involves merging the instances that appear in both charts and allowing the events to occur concurrently (interleaved), respecting the local ordering of each original chart.</p>
+<p>Here is the step-by-step derivation:</p>
+<p>1. **Identify Instances:**</p>
+<p>* "msc first" has instances: **$i$** and **$j$**.</p>
+<p>* "msc second" has instances: **$j$** and **$k$**.</p>
+<p>* The union of instances is **$\{i, j, k\}$**. Since **$j$** is common to both, its lifeline is merged. The resulting chart will have three lifelines arranged horizontally: $i$, $j$, and $k$.</p>
+<p>2. **Identify Messages and Constraints:**</p>
+<p>* From "msc first":</p>
+<p>* Message **$m$**: sent from $i$ to $j$.</p>
+<p>* Message **$n$**: sent from $j$ to $i$.</p>
+<p>* Constraint: On instance $j$, receiving $m$ happens before sending $n$. On instance $i$, sending $m$ happens before receiving $n$.</p>
+<p>* From "msc second":</p>
+<p>* Message **$o$**: sent from $j$ to $k$.</p>
+<p>* Message **$p$**: sent from $k$ to $j$.</p>
+<p>* Constraint: On instance $j$, sending $o$ happens before receiving $p$. On instance $k$, receiving $o$ happens before sending $p$.</p>
+<p>3. **Compose (Interleave):**</p>
+<p>* Since it is a horizontal (parallel) composition, there is no strict global ordering between the events of "first" and "second", other than what is required to keep the messages valid (causality) and respect the local order on the shared instance $j$.</p>
+<p>* A logical and common way to draw this composition—effectively chaining the interactions—is to have the "forward" messages happen first and the "backward" messages happen second.</p>
+<p>* **Forward path:** $i \xrightarrow{m} j \xrightarrow{o} k$</p>
+<p>* **Backward path:** $k \xrightarrow{p} j \xrightarrow{n} i$</p>
+<p>* This ordering ($m, o, p, n$) satisfies all constraints:</p>
+<p>* $j$ receives $m$, then sends $o$, then receives $p$, then sends $n$. (Satisfies $m$ before $n$ and $o$ before $p$).</p>
+<p>**Resulting Chart Description:**</p>
+<p>* **Lifelines:** Three vertical lines labeled **$i$**, **$j$**, and **$k$** from left to right.</p>
+<p>* **Messages:**</p>
+<p>1. Arrow **$m$** from $i$ to $j$ (top).</p>
+<p>2. Arrow **$o$** from $j$ to $k$ (below $m$).</p>
+<p>3. Arrow **$p$** from $k$ to $j$ (below $o$).</p>
+<p>4. Arrow **$n$** from $j$ to $i$ (bottom).</p>
+<p>**Visual Representation (ASCII):**</p>
+<p>```text</p>
+<p>i j k</p>
+<p>| | |</p>
+<p>| m | |</p>
+<p>|------&gt;| |</p>
+<p>| | o |</p>
+<p>| |------&gt;|</p>
+<p>| | |</p>
+<p>| | p |</p>
+<p>| |&lt;------|</p>
+<p>| n | |</p>
+<p>|&lt;------| |</p>
+<p>| | |</p>
+<p>```</p>
+<p>*(Note: In a strict parallel composition, $m$ and $o$ could happen in any relative order, as could $n$ and $p$, as long as $m$ is before $n$ and $o$ is before $p$. The drawing above shows one valid linearization that creates a coherent flow $i \to j \to k \to j \to i$.)*</p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-6/media/image2.png" style="width:3.37403in;height:2.53061in"/></p>
+<p><strong>Question:</strong> What is the order between sending m and receiving p in the composed diagram.</p>
+<p><strong>Answer:</strong></p>
+<p>Based on the composed MSC diagram, **sending m happens before receiving p**.</p>
+<p>Looking at the vertical ordering (top to bottom represents temporal sequence):</p>
+<p>1. **m** is sent from i to j (first/topmost message)</p>
+<p>2. **o** is sent from j to k</p>
+<p>3. **p** is sent from k to j (and received by j)</p>
+<p>4. **n** is sent from j to i</p>
+<p>Therefore, **sending m occurs before receiving p** in the composed diagram. The message m is the first event in the sequence, while p is received as the third event.</p>
+<p>Question:</p>
+<p>Please consider the original two MSCs labelled "first" and "second", given here again. Please compose them vertically (by putting "first" on top and "second" at the bottom). Please draw the resulting composed diagram.</p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-6/media/image1.png" style="width:6.27014in;height:2.48542in"/></p>
+<p>Answer:</p>
+<p>Based on the rules of vertical composition for Message Sequence Charts (MSCs), we combine the two charts by placing "msc first" on top of "msc second" and merging the common instance, which is **$j$**.</p>
+<p>**Steps to compose:**</p>
+<p>1. **Instances:** The resulting chart will have three lifelines: **$i$**, **$j$**, and **$k$**.</p>
+<p>2. **Ordering:** Since it is a vertical composition, all events in "msc first" must happen before the events in "msc second" on the shared lifeline **$j$**.</p>
+<p>3. **Messages:**</p>
+<p>* From "msc first": Message **$m$** ($i \to j$) and Message **$n$** ($j \to i$).</p>
+<p>* From "msc second": Message **$o$** ($j \to k$) and Message **$p$** ($k \to j$).</p>
+<p>**The resulting composed diagram:**</p>
+<p>```text</p>
+<p>i j k</p>
+<p>| | |</p>
+<p>| m | |</p>
+<p>|------&gt;| |</p>
+<p>| | |</p>
+<p>| | n |</p>
+<p>|&lt;------| |</p>
+<p>| | |</p>
+<p>| | o |</p>
+<p>| |------&gt;|</p>
+<p>| | |</p>
+<p>| | p |</p>
+<p>| |&lt;------|</p>
+<p>| | |</p>
+<p>```</p>
+<p>**Description of the flow:**</p>
+<p>1. Instance **$i$** sends message **$m$** to **$j$**.</p>
+<p>2. Instance **$j$** sends message **$n$** back to **$i$**.</p>
+<p>3. (Later on lifeline $j$) Instance **$j$** sends message **$o$** to **$k$**.</p>
+<p>4. Instance **$k$** sends message **$p$** back to **$j$**.</p>
+<p>Based on the vertical composition of the two MSCs, here is the resulting diagram:</p>
+<p>```</p>
+<p>i j k</p>
+<p>| | |</p>
+<p>| m | |</p>
+<p>|--------&gt;| |</p>
+<p>| | |</p>
+<p>| | n |</p>
+<p>|&lt;--------| |</p>
+<p>| | |</p>
+<p>| | o |</p>
+<p>| |--------&gt;|</p>
+<p>| | |</p>
+<p>| | p |</p>
+<p>| |&lt;--------|</p>
+<p>| | |</p>
+<p>```</p>
+<p>**Explanation of the vertically composed MSC:**</p>
+<p>- **Three instances (lifelines):** i, j, and k arranged horizontally</p>
+<p>- **Message sequence (top to bottom):**</p>
+<p>1. **m**: Instance i sends message m to instance j</p>
+<p>2. **n**: Instance j sends message n back to instance i</p>
+<p>3. **o**: Instance j sends message o to instance k</p>
+<p>4. **p**: Instance k sends message p back to instance j</p>
+<p>The vertical composition ensures that all events from "msc first" (messages m and n) occur before the events from "msc second" (messages o and p) on the shared instance j, maintaining the proper temporal ordering.</p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-6/media/image3.png" style="width:3.44885in;height:2.58673in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-6/media/image4.png" style="width:2.95907in;height:2.21939in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-6/media/image5.png" style="width:3.23798in;height:2.42857in"/></p>
+<p><strong>Question:</strong></p>
+<p>What is the order between receiving n and receiving p in the vertically-composed MSC.</p>
+<p><strong>Answer:</strong></p>
+<p>In the vertically-composed MSC (where "first" is placed on top and "second" at the bottom), **receiving n happens before receiving p**.</p>
+<p>Here's the reasoning:</p>
+<p>In vertical composition:</p>
+<p>1. All events from "msc first" occur before events from "msc second"</p>
+<p>2. Message **n** is sent from j to i (in the first MSC)</p>
+<p>3. Message **p** is sent from k to j (in the second MSC)</p>
+<p>The temporal order from top to bottom is:</p>
+<p>1. m: i → j (send and receive)</p>
+<p>2. **n: j → i** (send and receive) ← i receives n here</p>
+<p>3. o: j → k (send and receive)</p>
+<p>4. **p: k → j** (send and receive) ← j receives p here</p>
+<p>Therefore, **receiving n occurs before receiving p** in the vertically-composed MSC.</p>
+</section></main><footer class="site-footer"><div><p>Static replication package site generated from the supplied PDF and ZIP archive. Available data files are included in <code>data/</code>; Word documents are provided as uniformly styled HTML pages.</p></div></footer></body></html>

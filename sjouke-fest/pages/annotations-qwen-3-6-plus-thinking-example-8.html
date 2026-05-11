@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Annotations / Qwen 3.6 Plus - Thinking / Example 8.docx | HMSC Experiments Replication Package</title>
+<link href="../assets/style.css" rel="stylesheet"/></head>
+<body><a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="bar"><a class="brand" href="../index.html"><span class="brand-mark">K</span><span class="brand-text"><strong>HMSC Experiments</strong><span>Replication package website</span></span></a><nav class="primary"><a href="../index.html">Overview</a><a href="../browse/index.html">Browse data</a></nav></div></header>
+<main id="main"><p class="breadcrumbs"><a href="../index.html">Overview</a> / <a href="../browse/index.html">Browse data</a> / Converted Word document</p>
+<h1>Annotations / Qwen 3.6 Plus - Thinking / Example 8.docx</h1>
+<div class="button-row"><a class="button light" href="../browse/index.html">Back to data browser</a></div>
+<div class="notice small">This page is a uniformly styled HTML rendering of the original Word file. The original Word file is retained in the data folder for verification.</div>
+<section class="doc-content"><p><strong>Question:</strong> Consider the following High-Level Message Sequence Chart and its components represented in the attached two files. Generate two MSCs included in the semantics of the High-Level Message Sequence Chart.</p>
+<p><img src="../assets/doc-media/annotations-qwen-3-6-plus-thinking-example-8/media/image1.png" style="width:4.58333in;height:5.36111in"/></p>
+<p><img src="../assets/doc-media/annotations-qwen-3-6-plus-thinking-example-8/media/image2.png" style="width:6.27014in;height:4.02639in"/></p>
+<p><strong>Answer:</strong></p>
+<p>Based on the High-Level Message Sequence Chart (HMSC) and its components, here are two specific MSCs included in its semantics.</p>
+<p>The HMSC describes a protocol with a choice: either the message is **Delivered** successfully, or it is **Lost** (triggering a loop/retry).</p>
+<p>### MSC 1: Successful Delivery (First Attempt)</p>
+<p>This MSC corresponds to the path in the HMSC where the "Delivered" component is chosen immediately. It represents a scenario where the message passes through the medium and reaches the receiver without issues.</p>
+<p>**Participants:** Sender, Medium, Receiver</p>
+<p>**Sequence of Events:**</p>
+<p>1. **Request:** An external entity sends a `Request` to the **Sender**.</p>
+<p>2. **Offer:** The **Sender** sends an `Offer` to the **Medium**.</p>
+<p>3. **Forward:** The **Medium** sends a `Forward` message to the **Receiver**.</p>
+<p>4. **Deliver:** The **Receiver** performs a `Deliver` action (sending the message to the upper layer/application).</p>
+<p>5. **Ack1:** The **Receiver** sends an acknowledgment (`Ack1`) back to the **Medium**.</p>
+<p>6. **Ack2:** The **Medium** sends an acknowledgment (`Ack2`) back to the **Sender**.</p>
+<p>7. **Success:** The **Sender** reports `Success` to the external entity.</p>
+<p>---</p>
+<p>### MSC 2: Delivery after One Loss (Retransmission)</p>
+<p>This MSC corresponds to the path in the HMSC where the "Lost" component is executed first, the process loops back to the start, and then the "Delivered" component is executed. It represents a scenario where the first attempt fails (timeout), and the second attempt succeeds.</p>
+<p>**Participants:** Sender, Medium, Receiver</p>
+<p>**Sequence of Events:**</p>
+<p>1. **Request:** An external entity sends a `Request` to the **Sender**.</p>
+<p>2. **Offer:** The **Sender** sends an `Offer` to the **Medium**.</p>
+<p>3. **Timer:** The **Sender** waits (indicated by the self-loop `Timer`).</p>
+<p>4. **Fail:** The **Sender** reports a `Fail` to the external entity (indicating the first attempt failed).</p>
+<p>5. **Request:** The external entity sends a new `Request` to the **Sender** (triggering the retry loop).</p>
+<p>6. **Offer:** The **Sender** sends an `Offer` to the **Medium**.</p>
+<p>7. **Forward:** The **Medium** sends a `Forward` message to the **Receiver**.</p>
+<p>8. **Deliver:** The **Receiver** performs a `Deliver` action.</p>
+<p>9. **Ack1:** The **Receiver** sends an acknowledgment (`Ack1`) back to the **Medium**.</p>
+<p>10. **Ack2:** The **Medium** sends an acknowledgment (`Ack2`) back to the **Sender**.</p>
+<p>11. **Success:** The **Sender** reports `Success` to the external entity.</p>
+<p><img src="../assets/doc-media/annotations-qwen-3-6-plus-thinking-example-8/media/image3.png" style="width:4.30219in;height:3.22581in"/></p>
+<p><img src="../assets/doc-media/annotations-qwen-3-6-plus-thinking-example-8/media/image4.png" style="width:4.27351in;height:3.2043in"/></p>
+<p>Here are the two Message Sequence Charts (MSCs) derived from the semantics of the High-Level MSC:</p>
+<p>1. **MSC 1: Successful Delivery**</p>
+<p>This chart represents the path where the message is delivered successfully on the first attempt. It follows the sequence: Sender sends a Request, offers the message to the Medium, the Medium forwards it to the Receiver, and the Receiver delivers it. Acknowledgments (Ack1, Ack2) return to the Sender, concluding with a Success signal.</p>
+<p>2. **MSC 2: Retransmission (Lost then Delivered)**</p>
+<p>This chart represents the path where the first attempt fails (Lost) and a retransmission occurs. It shows the Sender offering the message, but a Timer expires leading to a Fail. The process then loops back (represented by the second Request), and the second attempt succeeds, following the same delivery and acknowledgment sequence as MSC 1.</p>
+<p>These diagrams visualize the possible behaviors defined by the protocol structure.</p>
+<p><strong>Task type: Composition</strong></p>
+<p><strong>Judgment: Incorrect.</strong></p>
+</section></main><footer class="site-footer"><div><p>Static replication package site generated from the supplied PDF and ZIP archive. Available data files are included in <code>data/</code>; Word documents are provided as uniformly styled HTML pages.</p></div></footer></body></html>

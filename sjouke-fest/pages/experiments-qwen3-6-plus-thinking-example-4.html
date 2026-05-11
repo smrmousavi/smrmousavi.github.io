@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Experiments / QWen3.6-Plus-Thinking / Example 4.docx | HMSC Experiments Replication Package</title>
+<link href="../assets/style.css" rel="stylesheet"/></head>
+<body><a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="bar"><a class="brand" href="../index.html"><span class="brand-mark">K</span><span class="brand-text"><strong>HMSC Experiments</strong><span>Replication package website</span></span></a><nav class="primary"><a href="../index.html">Overview</a><a href="../browse/index.html">Browse data</a></nav></div></header>
+<main id="main"><p class="breadcrumbs"><a href="../index.html">Overview</a> / <a href="../browse/index.html">Browse data</a> / Converted Word document</p>
+<h1>Experiments / QWen3.6-Plus-Thinking / Example 4.docx</h1>
+<div class="button-row"><a class="button light" href="../browse/index.html">Back to data browser</a></div>
+<div class="notice small">This page is a uniformly styled HTML rendering of the original Word file. The original Word file is retained in the data folder for verification.</div>
+<section class="doc-content"><p><strong>Question:</strong> Consider the following two message sequence charts labelled "first" and "second"; compose them horizontally and draw the resulting composed message sequence chart.</p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-4/media/image1.png" style="width:6.27014in;height:2.79097in"/></p>
+<p><strong>Answer:</strong></p>
+<p>Based on standard Message Sequence Chart (MSC) notation (ITU-T Z.120), **horizontal composition** typically refers to **parallel composition**. This means the two charts are placed side-by-side, and their events can occur concurrently (in any relative order), as long as the internal order of each individual chart is preserved.</p>
+<p>Since the instances in the first chart (`i`, `j`) are different from the instances in the second chart (`k`, `l`), the resulting chart will simply contain all four instances running in parallel.</p>
+<p>Here is the drawing of the resulting composed message sequence chart:</p>
+<p>```text</p>
+<p>+-------------------------------------------------------+</p>
+<p>| |</p>
+<p>| i j k l |</p>
+<p>| +---+ +---+ +---+ +---+ |</p>
+<p>| | | | | | | | | |</p>
+<p>| | | | | | | | | |</p>
+<p>| | +---------&gt; | | | | (message m) |</p>
+<p>| | | | | | | | | |</p>
+<p>| | | | | | +---------&gt; | (message n) |</p>
+<p>| | | | | | | | | |</p>
+<p>| | | | | | | | | |</p>
+<p>| +===+ +===+ +===+ +===+ |</p>
+<p>| |</p>
+<p>+-------------------------------------------------------+</p>
+<p>```</p>
+<p>**Explanation of the composition:**</p>
+<p>* **Instances:** The four instances `i`, `j`, `k`, and `l` are arranged horizontally from left to right.</p>
+<p>* **Messages:**</p>
+<p>* Message `m` is sent from instance `i` to instance `j`.</p>
+<p>* Message `n` is sent from instance `k` to instance `l`.</p>
+<p>* **Timing:** Because this is a horizontal (parallel) composition, there is no strict causal relationship between message `m` and message `n`. They are shown occurring roughly at the same time, but in a real execution, `m` could happen before, after, or simultaneously with `n`.</p>
+<p>Please draw the resulting MSC as an image.</p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-4/media/image2.png" style="width:6.27014in;height:4.70278in"/></p>
+<p><strong>Question:</strong> What is the order between sending m and receiving n in the composed diagram.</p>
+<p><strong>Answer:</strong></p>
+<p>In the horizontally composed diagram, **there is no defined order** between sending message **m** and receiving message **n**.</p>
+<p>Here's why:</p>
+<p>1. **Horizontal composition = Parallel composition**: When MSCs are composed horizontally, they run concurrently/in parallel.</p>
+<p>2. **Independent instances**:</p>
+<p>- Message **m** involves instances **i** and **j**</p>
+<p>- Message **n** involves instances **k** and **l**</p>
+<p>- These are completely separate instances with no causal dependencies</p>
+<p>3. **No ordering constraint**: In the composed diagram, the sending of **m** and the receiving of **n** can occur in any order:</p>
+<p>- **m** could be sent before **n** is received</p>
+<p>- **n** could be received before **m** is sent</p>
+<p>- They could happen simultaneously</p>
+<p>The only ordering constraints preserved in the composition are:</p>
+<p>- Within "first": sending **m** must happen before receiving **m**</p>
+<p>- Within "second": sending **n** must happen before receiving **n**</p>
+<p>But there is **no causal relationship** between events from different MSCs in a parallel composition, so the relative order of **m** and **n** is **unspecified/concurrent**.</p>
+<p>Question:</p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-4/media/image1.png" style="width:6.27014in;height:2.78958in"/></p>
+<p>Please consider the original two MSCs labelled "first" and "second", given here again. Please compose them vertically (by putting "first" on top and "second" at the bottom). Please draw the resulting composed diagram</p>
+<p>Answer:</p>
+<p>Based on the rules of Message Sequence Charts (MSC), vertical composition (concatenation) places the events of the first chart before the events of the second chart in time.</p>
+<p>Since the instances in the first chart (`i`, `j`) are different from the instances in the second chart (`k`, `l`), the resulting composed diagram will contain all four instances running in parallel, but with the actions of "first" happening before the actions of "second".</p>
+<p>Here is the resulting composed diagram:</p>
+<p><strong>```text</strong></p>
+<p><strong>+-------------------------------------------------------+</strong></p>
+<p><strong>| |</strong></p>
+<p><strong>| i j k l |</strong></p>
+<p><strong>| +---+ +---+ +---+ +---+ |</strong></p>
+<p><strong>| | | | | | | | | |</strong></p>
+<p><strong>| | | | | | | | | |</strong></p>
+<p><strong>| | +---------&gt; | | | | (message m) |</strong></p>
+<p><strong>| | | | | | | | | |</strong></p>
+<p><strong>| | | | | | | | | |</strong></p>
+<p><strong>| | | | | | +---------&gt; | (message n) |</strong></p>
+<p><strong>| | | | | | | | | |</strong></p>
+<p><strong>| | | | | | | | | |</strong></p>
+<p><strong>| +===+ +===+ +===+ +===+ |</strong></p>
+<p><strong>| |</strong></p>
+<p><strong>+-------------------------------------------------------+</strong></p>
+<p><strong>```</strong></p>
+<p>**Explanation:**</p>
+<p>1. **Instances:** The chart now has four lifelines labeled `i`, `j`, `k`, and `l` across the top.</p>
+<p>2. **Ordering:** Because it is a **vertical composition**, the events from "msc first" occur above the events from "msc second".</p>
+<p>* First, message **m** is sent from `i` to `j`.</p>
+<p>* Subsequently (lower down in the diagram), message **n** is sent from `k` to `l`.</p>
+<p>3. **Concurrency:** While `m` is happening, instances `k` and `l` are idle (their lifelines just go straight down). While `n` is happening later, instances `i` and `j` are idle.</p>
+<p>Please draw the resulting MSC as an image.</p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-4/media/image3.png" style="width:6.27014in;height:4.70278in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-4/media/image4.png" style="width:6.27014in;height:4.70278in"/></p>
+<p><img src="../assets/doc-media/experiments-qwen3-6-plus-thinking-example-4/media/image5.png" style="width:6.27014in;height:3.49653in"/></p>
+<p>Perfect! The resulting MSC diagram shows the vertical composition of the two original MSCs:</p>
+<ul>
+<li><p><strong>Four lifelines</strong> (i, j, k, l) are displayed from left to right</p></li>
+<li><p><strong>Message m</strong> is sent from instance i to instance j in the upper portion (from the "first" MSC)</p></li>
+<li><p><strong>Message n</strong> is sent from instance k to instance l in the lower portion (from the "second" MSC)</p></li>
+<li><p>The vertical positioning shows that message m occurs <strong>before</strong> message n in time, which is the key characteristic of vertical composition</p></li>
+</ul>
+<p>This correctly represents the sequential execution where the "first" MSC completes before the "second" MSC begins.</p>
+<p>Question:</p>
+<p>What is the order between sending m and receiving n in the vertically composed diagram.</p>
+<p>Answer:</p>
+<p>In the vertically composed diagram, **sending m happens before receiving n**.</p>
+<p>In vertical composition (also called sequential composition), all events in the top MSC ("first") must complete before any events in the bottom MSC ("second") can begin. This creates a strict causal ordering where:</p>
+<p>1. Message m is sent from i to j (in the upper portion)</p>
+<p>2. Then message n is sent from k to l (in the lower portion)</p>
+<p>Therefore, there is a **happens-before relationship**: sending m → receiving n. The sending of m temporally precedes the receiving of n in the vertically composed diagram.</p>
+</section></main><footer class="site-footer"><div><p>Static replication package site generated from the supplied PDF and ZIP archive. Available data files are included in <code>data/</code>; Word documents are provided as uniformly styled HTML pages.</p></div></footer></body></html>

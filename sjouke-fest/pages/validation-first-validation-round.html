@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Validation / First Validation Round.docx | HMSC Experiments Replication Package</title>
+<link href="../assets/style.css" rel="stylesheet"/></head>
+<body><a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="bar"><a class="brand" href="../index.html"><span class="brand-mark">K</span><span class="brand-text"><strong>HMSC Experiments</strong><span>Replication package website</span></span></a><nav class="primary"><a href="../index.html">Overview</a><a href="../browse/index.html">Browse data</a></nav></div></header>
+<main id="main"><p class="breadcrumbs"><a href="../index.html">Overview</a> / <a href="../browse/index.html">Browse data</a> / Converted Word document</p>
+<h1>Validation / First Validation Round.docx</h1>
+<div class="button-row"><a class="button light" href="../browse/index.html">Back to data browser</a></div>
+<div class="notice small">This page is a uniformly styled HTML rendering of the original Word file. The original Word file is retained in the data folder for verification.</div>
+<section class="doc-content"><p>Prompt:</p>
+<p>I have performed a series of 9 experiments on how much three different LLMs (Gemini, GPT, and Qwen) understand the semantics of MSCs. In the attached zip file, I am including the annotated results of the experiments. Please check if there is any discrepancy in the tasks assigned to the different LLMs; the tasks assigned to all three LLMs are supposed to be identical.</p>
+<p>Response:</p>
+<p>I checked the 27 DOCX files in the zip, grouped by model and example. There are discrepancies in the tasks assigned to the LLMs. The tasks are not identical across Gemini, GPT, and Qwen.</p>
+<p><strong>Detailed findings by example</strong></p>
+<table>
+<colgroup>
+<col style="width: 9%"/>
+<col style="width: 19%"/>
+<col style="width: 71%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Example</strong></th>
+<th><strong>Identical across all three?</strong></th>
+<th><strong>Discrepancy found</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>No</td>
+<td>The event-ordering questions differ substantially. Gemini asks about “receipt of m3 vs sending m1” and “sending m0 vs sending m4”; GPT asks “sending m1 vs sending m4”; Qwen asks “receiving m1 vs sending m2” and “sending m1 vs sending m3.” GPT/Qwen also have an explicit merge task for i2 and i3, while Gemini’s extracted prompt sequence does not show the same explicit merge task.</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>No</td>
+<td>Ordering questions differ in direction/wording: Gemini asks “receipt of m2 vs receiving m1” and “sending m2 vs sending m1”; GPT/Qwen ask “sending m1 vs sending m2” and “receiving m1 vs receiving m2.” The merge task also differs: GPT says merge i1 and i2, while Qwen says merge i2 and i3; Gemini does not show the same explicit merge task.</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Mostly yes</td>
+<td>The core task sequence appears consistent: identify events, order receiving m1 vs sending m4, abstract m4, ask order after abstraction, merge i1 and i2, produce traces, draw LTS. Minor follow-up wording differs, such as image-drawing requests.</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Mostly yes</td>
+<td>Core tasks match. GPT appears to repeat the same horizontal-composition ordering question once. Drawing-request phrasing varies, but the assigned semantic tasks are the same.</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Yes</td>
+<td>No substantive task discrepancy found.</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Yes</td>
+<td>No substantive task discrepancy found.</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Mostly yes</td>
+<td>Initial HMSC task is the same. GPT and Qwen include an extra follow-up “Please draw the two MSCs”; Gemini does not show it as a separate prompt, though the initial task already asks to generate two MSCs.</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>No / partial</td>
+<td>Initial HMSC task is the same, but GPT has an extra follow-up task: “Please redraw the second MSC (MSC 2).” Gemini and Qwen do not show this extra task.</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>No / minor but real</td>
+<td>Most tasks match, but the second ordering question differs: Gemini asks “between sending Success and sending Deliver”; GPT and Qwen ask “between sending Success and sending receiving Deliver,” which is either a typo or a different event reference.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Additional observation</strong></p>
+<p>I also spot-checked the embedded source diagrams. The first/source image is visually the same across the three models for most examples; Example 2’s GPT source image has different dimensions/hash, but it appears visually to be the same MSC scaled differently. The main discrepancies are therefore in the textual prompts/tasks, not necessarily the diagrams.</p>
+<p><strong>Bottom line</strong></p>
+<p>Examples 1 and 2 are clearly not comparable as identical-task experiments. Examples 8 and 9 also contain task inconsistencies. Examples 3–7 are mostly consistent, with only minor follow-up or drawing-prompt differences.</p>
+</section></main><footer class="site-footer"><div><p>Static replication package site generated from the supplied PDF and ZIP archive. Available data files are included in <code>data/</code>; Word documents are provided as uniformly styled HTML pages.</p></div></footer></body></html>

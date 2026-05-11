@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Analysis / research_question_answers_summary.docx | HMSC Experiments Replication Package</title>
+<link href="../assets/style.css" rel="stylesheet"/></head>
+<body><a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="bar"><a class="brand" href="../index.html"><span class="brand-mark">K</span><span class="brand-text"><strong>HMSC Experiments</strong><span>Replication package website</span></span></a><nav class="primary"><a href="../index.html">Overview</a><a href="../browse/index.html">Browse data</a></nav></div></header>
+<main id="main"><p class="breadcrumbs"><a href="../index.html">Overview</a> / <a href="../browse/index.html">Browse data</a> / Converted Word document</p>
+<h1>Analysis / research_question_answers_summary.docx</h1>
+<div class="button-row"><a class="button light" href="../browse/index.html">Back to data browser</a></div>
+<div class="notice small">This page is a uniformly styled HTML rendering of the original Word file. The original Word file is retained in the data folder for verification.</div>
+<section class="doc-content"><p><strong>Question:</strong></p>
+<p>Please answer the following research questions based on the data in the attached annotation file: RQ1: To what extent can LLMs identify and reason about the basic semantic elements of MSCs? RQ2: How well do LLMs perform semantic transformations (abstraction, composition) over MSCs? RQ3: Can LLMs reason about the behavioural semantics (traces, LTS) of MSCs? RQ4: How does LLM performance vary with model complexity and task complexity? RQ5: Which MSC concepts constitute recurring "pain patterns" for LLMs (i.e., those patterns that cannot be handled correctly in most cases)?</p>
+<p><strong>Answer:</strong></p>
+<p>Summary of Research Question Answers</p>
+<p>This document summarises the answers to the five research questions using the annotation-derived accuracy tables. The interpretation is based on 129 judged tasks, balanced across three models with 43 tasks each.</p>
+<h1 id="rq1-to-what-extent-can-llms-identify-and-reason-about-the-basic-semantic-elements-of-mscs">RQ1: To what extent can LLMs identify and reason about the basic semantic elements of MSCs?</h1>
+<p>The models performed strongly on basic MSC semantics. Identifying events reached 91.7% aggregate accuracy and identifying event orders reached 85.7%. These were the strongest categories in the dataset.</p>
+<table>
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Basic MSC task</strong></th>
+<th><strong>Correct</strong></th>
+<th><strong>Total</strong></th>
+<th><strong>Accuracy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Identifying events</td>
+<td>11</td>
+<td>12</td>
+<td>91.7%</td>
+</tr>
+<tr class="even">
+<td>Identifying event orders</td>
+<td>18</td>
+<td>21</td>
+<td>85.7%</td>
+</tr>
+<tr class="odd">
+<td>Combined basic semantic tasks</td>
+<td>29</td>
+<td>33</td>
+<td>87.9%</td>
+</tr>
+<tr class="even">
+<td colspan="4"><strong>Answer:</strong> LLMs are generally competent at recognising basic MSC semantic elements, especially event identification and event ordering.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="rq2-how-well-do-llms-perform-semantic-transformations-over-mscs">RQ2: How well do LLMs perform semantic transformations over MSCs?</h1>
+<p>Semantic transformations were substantially harder. Abstraction was the weakest task type overall, while composition showed model-dependent behaviour.</p>
+<table>
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 8%"/>
+<col style="width: 16%"/>
+<col style="width: 16%"/>
+<col style="width: 8%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Transformation task</strong></th>
+<th colspan="2"><strong>Correct</strong></th>
+<th colspan="2"><strong>Total</strong></th>
+<th><strong>Accuracy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Abstraction</td>
+<td colspan="2">6</td>
+<td colspan="2">30</td>
+<td>20.0%</td>
+</tr>
+<tr class="even">
+<td>Composition</td>
+<td colspan="2">20</td>
+<td colspan="2">42</td>
+<td>47.6%</td>
+</tr>
+<tr class="odd">
+<td>Combined transformation tasks</td>
+<td colspan="2">26</td>
+<td colspan="2">72</td>
+<td>36.1%</td>
+</tr>
+<tr class="even">
+<td colspan="2"><strong>Model</strong></td>
+<td colspan="2"><strong>Abstraction accuracy</strong></td>
+<td colspan="2"><strong>Composition accuracy</strong></td>
+</tr>
+<tr class="odd">
+<td colspan="2">GPT-5.4-Thinking Deep</td>
+<td colspan="2">20.0%</td>
+<td colspan="2">35.7%</td>
+</tr>
+<tr class="even">
+<td colspan="2">Gemini 3 - Thinking</td>
+<td colspan="2">10.0%</td>
+<td colspan="2">71.4%</td>
+</tr>
+<tr class="odd">
+<td colspan="2">Qwen 3.6 Plus - Thinking</td>
+<td colspan="2">30.0%</td>
+<td colspan="2">35.7%</td>
+</tr>
+<tr class="even">
+<td colspan="6"><strong>Answer:</strong> LLMs perform poorly on MSC semantic transformations overall. Abstraction is a severe cross-model weakness, whereas composition is inconsistent and strongly model-dependent.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="rq3-can-llms-reason-about-the-behavioural-semantics-of-mscs">RQ3: Can LLMs reason about the behavioural semantics of MSCs?</h1>
+<p>Behavioural semantics were challenging. Trace reasoning was moderate, but LTS reasoning was poor across the dataset.</p>
+<table>
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 8%"/>
+<col style="width: 16%"/>
+<col style="width: 16%"/>
+<col style="width: 8%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Behavioural task</strong></th>
+<th colspan="2"><strong>Correct</strong></th>
+<th colspan="2"><strong>Total</strong></th>
+<th><strong>Accuracy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Traces</td>
+<td colspan="2">7</td>
+<td colspan="2">12</td>
+<td>58.3%</td>
+</tr>
+<tr class="even">
+<td>LTS</td>
+<td colspan="2">3</td>
+<td colspan="2">12</td>
+<td>25.0%</td>
+</tr>
+<tr class="odd">
+<td>Combined behavioural semantics tasks</td>
+<td colspan="2">10</td>
+<td colspan="2">24</td>
+<td>41.7%</td>
+</tr>
+<tr class="even">
+<td colspan="2"><strong>Model</strong></td>
+<td colspan="2"><strong>Traces accuracy</strong></td>
+<td colspan="2"><strong>LTS accuracy</strong></td>
+</tr>
+<tr class="odd">
+<td colspan="2">GPT-5.4-Thinking Deep</td>
+<td colspan="2">75.0%</td>
+<td colspan="2">50.0%</td>
+</tr>
+<tr class="even">
+<td colspan="2">Gemini 3 - Thinking</td>
+<td colspan="2">50.0%</td>
+<td colspan="2">0.0%</td>
+</tr>
+<tr class="odd">
+<td colspan="2">Qwen 3.6 Plus - Thinking</td>
+<td colspan="2">50.0%</td>
+<td colspan="2">25.0%</td>
+</tr>
+<tr class="even">
+<td colspan="6"><strong>Answer:</strong> LLMs can reason about traces to a limited or moderate extent, but LTS-based behavioural semantics remain a major difficulty.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="rq4-how-does-llm-performance-vary-with-model-complexity-and-task-complexity">RQ4: How does LLM performance vary with model complexity and task complexity?</h1>
+<p>Overall model performance was relatively close, and there was no simple monotonic relationship between model identity and performance. Task complexity had a clearer effect: performance fell as tasks moved from recognition to transformation and behavioural modelling.</p>
+<table>
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Model</strong></th>
+<th><strong>Correct</strong></th>
+<th><strong>Total</strong></th>
+<th><strong>Overall accuracy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Gemini 3 - Thinking</td>
+<td>24</td>
+<td>43</td>
+<td>55.8%</td>
+</tr>
+<tr class="even">
+<td>Qwen 3.6 Plus - Thinking</td>
+<td>21</td>
+<td>43</td>
+<td>48.8%</td>
+</tr>
+<tr class="odd">
+<td>GPT-5.4-Thinking Deep</td>
+<td>20</td>
+<td>43</td>
+<td>46.5%</td>
+</tr>
+<tr class="even">
+<td colspan="2"><strong>Task group</strong></td>
+<td colspan="2"><strong>Accuracy</strong></td>
+</tr>
+<tr class="odd">
+<td colspan="2">Basic semantic tasks: events + event orders</td>
+<td colspan="2">87.9%</td>
+</tr>
+<tr class="even">
+<td colspan="2">Behavioural semantics: traces + LTS</td>
+<td colspan="2">41.7%</td>
+</tr>
+<tr class="odd">
+<td colspan="2">Transformations: abstraction + composition</td>
+<td colspan="2">36.1%</td>
+</tr>
+<tr class="even">
+<td colspan="4"><strong>Answer:</strong> Task complexity explains performance variation better than model choice. Basic recognition is strong, while transformations and behavioural semantics are much weaker.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="rq5-which-msc-concepts-constitute-recurring-pain-patterns-for-llms">RQ5: Which MSC concepts constitute recurring pain patterns for LLMs?</h1>
+<p>Recurring pain patterns are task types or examples where most model outputs were incorrect. Abstraction and LTS reasoning are the clearest recurring failures. Difficult composition examples also caused repeated failures, particularly Example 8, which all models failed.</p>
+<table>
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Pain pattern</strong></th>
+<th><strong>Accuracy</strong></th>
+<th><strong>Interpretation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Abstraction</td>
+<td>20.0%</td>
+<td>Severe recurring failure across all models</td>
+</tr>
+<tr class="even">
+<td>LTS</td>
+<td>25.0%</td>
+<td>Severe difficulty with state-transition behavioural semantics</td>
+</tr>
+<tr class="odd">
+<td>Composition</td>
+<td>47.6%</td>
+<td>Mostly incorrect overall and model-dependent</td>
+</tr>
+<tr class="even">
+<td>Example 8</td>
+<td>0.0%</td>
+<td>Failed by all models</td>
+</tr>
+<tr class="odd">
+<td colspan="3"><strong>Answer:</strong> The main pain patterns are abstraction, LTS reasoning, and difficult composition cases. These concepts are not handled correctly in most cases.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="overall-conclusion">Overall Conclusion</h1>
+<p>The results show a clear capability hierarchy. LLMs are strongest at event identification and event ordering, moderately reliable on traces, weaker on composition, and weakest on abstraction and LTS reasoning.</p>
+<table>
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Capability level</strong></th>
+<th><strong>MSC task types</strong></th>
+<th><strong>Observed performance</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Strong</td>
+<td>Event identification, event ordering</td>
+<td>High accuracy</td>
+</tr>
+<tr class="even">
+<td>Moderate</td>
+<td>Trace reasoning</td>
+<td>Mixed accuracy</td>
+</tr>
+<tr class="odd">
+<td>Weak</td>
+<td>Composition</td>
+<td>Model-dependent, often poor</td>
+</tr>
+<tr class="even">
+<td>Very weak</td>
+<td>Abstraction, LTS</td>
+<td>Recurring failure patterns</td>
+</tr>
+<tr class="odd">
+<td colspan="3"><strong>Final summary:</strong> LLMs can usually recognise basic MSC semantics, but they are far less reliable for semantic transformations and formal behavioural semantics.</td>
+</tr>
+</tbody>
+</table>
+</section></main><footer class="site-footer"><div><p>Static replication package site generated from the supplied PDF and ZIP archive. Available data files are included in <code>data/</code>; Word documents are provided as uniformly styled HTML pages.</p></div></footer></body></html>

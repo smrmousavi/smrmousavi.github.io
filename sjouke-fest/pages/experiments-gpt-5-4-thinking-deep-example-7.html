@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Experiments / GPT-5.4-Thinking Deep / Example 7.docx | HMSC Experiments Replication Package</title>
+<link href="../assets/style.css" rel="stylesheet"/></head>
+<body><a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="bar"><a class="brand" href="../index.html"><span class="brand-mark">K</span><span class="brand-text"><strong>HMSC Experiments</strong><span>Replication package website</span></span></a><nav class="primary"><a href="../index.html">Overview</a><a href="../browse/index.html">Browse data</a></nav></div></header>
+<main id="main"><p class="breadcrumbs"><a href="../index.html">Overview</a> / <a href="../browse/index.html">Browse data</a> / Converted Word document</p>
+<h1>Experiments / GPT-5.4-Thinking Deep / Example 7.docx</h1>
+<div class="button-row"><a class="button light" href="../browse/index.html">Back to data browser</a></div>
+<div class="notice small">This page is a uniformly styled HTML rendering of the original Word file. The original Word file is retained in the data folder for verification.</div>
+<section class="doc-content"><p><strong>Question:</strong> Consider the following High-Level Message Sequence Chart and</p>
+<p>its components represented in the attached two files. Generate two MSCs</p>
+<p>included in the semantics of the High-Level Message Sequence Chart.</p>
+<p> </p>
+<p><img src="../assets/doc-media/experiments-gpt-5-4-thinking-deep-example-7/media/image1.png" style="width:3.05231in;height:3.41667in"/><img src="../assets/doc-media/experiments-gpt-5-4-thinking-deep-example-7/media/image2.png" style="width:6.27014in;height:2.48681in"/></p>
+<p><strong>Answer:</strong></p>
+<p>The HMSC has one initial component followed by a choice:</p>
+<p>Connection request ;</p>
+<p>   ( Connection confirm  +  Time-out )</p>
+<p>So two MSCs included in its semantics are obtained by concatenating <strong>Connection request</strong> with each branch.</p>
+<p><strong>MSC 1 — Successful connection</strong></p>
+<p>This MSC corresponds to the path:</p>
+<p>Connection request → Connection confirm</p>
+<p><strong>Event sequence</strong></p>
+<p>Initiator                     Responder</p>
+<p>    |                             |</p>
+<p>    |&lt;-- ICONreq                  |      external input to Initiator</p>
+<p>    |                             |</p>
+<p>    |---------- ICON ------------&gt;|</p>
+<p>    |                             |</p>
+<p>    |                             |-- ICONind --&gt; external output</p>
+<p>    |                             |</p>
+<p>    |                             |&lt;-- ICONresp  external input to Responder</p>
+<p>    |&lt;--------- ICONF ------------|</p>
+<p>    |                             |</p>
+<p>    |-- ICONconf --&gt; external output</p>
+<p>    |                             |</p>
+<p><strong>Informal trace</strong></p>
+<p>ICONreq ;</p>
+<p>ICON ;</p>
+<p>ICONind ;</p>
+<p>ICONresp ;</p>
+<p>ICONF ;</p>
+<p>ICONconf</p>
+<p>Thus the Initiator receives a connection request, sends ICON to the Responder, the Responder indicates the request, receives a response, sends ICONF back, and finally the Initiator emits ICONconf.</p>
+<p><strong>MSC 2 — Connection request followed by timeout</strong></p>
+<p>This MSC corresponds to the path:</p>
+<p>Connection request → Time-out</p>
+<p><strong>Event sequence</strong></p>
+<p>Initiator                     Responder</p>
+<p>    |                             |</p>
+<p>    |&lt;-- ICONreq                  |      external input to Initiator</p>
+<p>    |                             |</p>
+<p>    |---------- ICON ------------&gt;|</p>
+<p>    |                             |</p>
+<p>    |                             |-- ICONind --&gt; external output</p>
+<p>    |                             |</p>
+<p>    |                             |</p>
+<p>    |---- Timer / timeout ----&gt;   |      local timeout event on Initiator</p>
+<p>    |                             |</p>
+<p><strong>Informal trace</strong></p>
+<p>ICONreq ;</p>
+<p>ICON ;</p>
+<p>ICONind ;</p>
+<p>Timer</p>
+<p>Here the connection request is sent to the Responder, but instead of receiving a confirmation, the Initiator experiences a timeout.</p>
+<p>So, the two MSCs in the semantics of the given HMSC are:</p>
+<ol type="1">
+<li><p><strong>Connection request followed by Connection confirm</strong></p></li>
+<li><p><strong>Connection request followed by Time-out</strong></p></li>
+</ol>
+<p>Please draw the two MSCs.</p>
+<p><img src="../assets/doc-media/experiments-gpt-5-4-thinking-deep-example-7/media/image3.png" style="width:6.27014in;height:3.51181in"/></p>
+</section></main><footer class="site-footer"><div><p>Static replication package site generated from the supplied PDF and ZIP archive. Available data files are included in <code>data/</code>; Word documents are provided as uniformly styled HTML pages.</p></div></footer></body></html>

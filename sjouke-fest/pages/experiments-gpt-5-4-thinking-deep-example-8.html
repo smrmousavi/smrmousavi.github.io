@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Experiments / GPT-5.4-Thinking Deep / Example 8.docx | HMSC Experiments Replication Package</title>
+<link href="../assets/style.css" rel="stylesheet"/></head>
+<body><a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="bar"><a class="brand" href="../index.html"><span class="brand-mark">K</span><span class="brand-text"><strong>HMSC Experiments</strong><span>Replication package website</span></span></a><nav class="primary"><a href="../index.html">Overview</a><a href="../browse/index.html">Browse data</a></nav></div></header>
+<main id="main"><p class="breadcrumbs"><a href="../index.html">Overview</a> / <a href="../browse/index.html">Browse data</a> / Converted Word document</p>
+<h1>Experiments / GPT-5.4-Thinking Deep / Example 8.docx</h1>
+<div class="button-row"><a class="button light" href="../browse/index.html">Back to data browser</a></div>
+<div class="notice small">This page is a uniformly styled HTML rendering of the original Word file. The original Word file is retained in the data folder for verification.</div>
+<section class="doc-content"><p><strong>Question:</strong> Consider the following High-Level Message Sequence Chart and its components represented in the attached two files. Generate two MSCs included in the semantics of the High-Level Message Sequence Chart.</p>
+<p><img src="../assets/doc-media/experiments-gpt-5-4-thinking-deep-example-8/media/image1.png" style="width:4.58333in;height:5.36111in"/></p>
+<p><img src="../assets/doc-media/experiments-gpt-5-4-thinking-deep-example-8/media/image2.png" style="width:6.27014in;height:4.02639in"/></p>
+<p><strong>Answer:</strong></p>
+<p>Sure — here are <strong>two drawn MSCs</strong> (as renderable sequence-diagram drawings) corresponding to the HMSC semantics <strong>Lost*</strong> ; <strong>Delivered</strong>:</p>
+<ul>
+<li><p><strong>MSC 1 (k = 0):</strong> Delivered immediately</p></li>
+<li><p><strong>MSC 2 (k = 1):</strong> One Lost attempt, then Delivered</p></li>
+</ul>
+<p>You can paste these into any Markdown viewer that supports <strong>Mermaid</strong> (e.g., many wiki systems, VS Code extensions, GitHub, etc.) to see them <em>drawn</em>.</p>
+<p><strong>MSC 1 — Delivered (no loss, k = 0)</strong></p>
+<p>sequenceDiagram</p>
+<p>    title MSC M0: Delivered (k=0)</p>
+<p>    participant Env as Environment</p>
+<p>    participant S as Sender</p>
+<p>    participant M as Medium</p>
+<p>    participant R as Receiver</p>
+<p>    Env-&gt;&gt;S: Request</p>
+<p>    S-&gt;&gt;M: Offer</p>
+<p>    M-&gt;&gt;R: Forward</p>
+<p>    R-&gt;&gt;Env: Deliver</p>
+<p>    R-&gt;&gt;M: Ack1</p>
+<p>    M-&gt;&gt;S: Ack2</p>
+<p>    S-&gt;&gt;Env: Success</p>
+<p><strong>MSC 2 — Lost ; Delivered (one loss then success, k = 1)</strong></p>
+<p>sequenceDiagram</p>
+<p>    title MSC M1: Lost once, then Delivered (k=1)</p>
+<p>    participant Env as Environment</p>
+<p>    participant S as Sender</p>
+<p>    participant M as Medium</p>
+<p>    participant R as Receiver</p>
+<p>    rect rgb(245,245,245)</p>
+<p>      note over Env,S,M: Lost attempt</p>
+<p>      Env-&gt;&gt;S: Request</p>
+<p>      S-&gt;&gt;M: Offer</p>
+<p>      S-&gt;&gt;S: Timer</p>
+<p>      S-&gt;&gt;Env: Fail</p>
+<p>    end</p>
+<p>    rect rgb(235,255,235)</p>
+<p>      note over Env,S,M,R: Delivered attempt</p>
+<p>      Env-&gt;&gt;S: Request</p>
+<p>      S-&gt;&gt;M: Offer</p>
+<p>      M-&gt;&gt;R: Forward</p>
+<p>      R-&gt;&gt;Env: Deliver</p>
+<p>      R-&gt;&gt;M: Ack1</p>
+<p>      M-&gt;&gt;S: Ack2</p>
+<p>      S-&gt;&gt;Env: Success</p>
+<p>    end</p>
+<p><strong>Want them in <em>classic MSC</em> layout?</strong></p>
+<p>If you tell me which notation you prefer (e.g., <strong>ITU Z.120-style MSC</strong>, <strong>SDL/MSC</strong>, or <strong>UML sequence diagram</strong>), I can redraw them with closer lifeline/event styling (including explicit message arrows, inline events, and termination bars).</p>
+<p>Please redraw the second MSC (MSC 2).</p>
+<p>Absolutely — here is a <strong>cleaner redraw of MSC 2</strong> (the scenario <strong>Lost once, then Delivered</strong>) with clearer separation of the two phases and a more “MSC-like” visual structure.</p>
+<h2 id="msc-2-k-1-lost-delivered-redrawn-mermaid">MSC 2 (k = 1): Lost ; Delivered — Redrawn (Mermaid)</h2>
+<p>sequenceDiagram</p>
+<p>    title MSC 2 (k=1): One Loss, then Successful Delivery</p>
+<p>    participant Env as Environment</p>
+<p>    participant S as Sender</p>
+<p>    participant M as Medium</p>
+<p>    participant R as Receiver</p>
+<p>    %% --- First attempt: Lost ---</p>
+<p>    rect rgb(255,245,245)</p>
+<p>      note over Env,S,M: Attempt 1 — Lost</p>
+<p>      Env-&gt;&gt;S: Request</p>
+<p>      S-&gt;&gt;M: Offer</p>
+<p>      Note over S: Timer expires (timeout)</p>
+<p>      S-&gt;&gt;Env: Fail</p>
+<p>    end</p>
+<p>    %% --- Second attempt: Delivered ---</p>
+<p>    rect rgb(245,255,245)</p>
+<p>      note over Env,S,M,R: Attempt 2 — Delivered</p>
+<p>      Env-&gt;&gt;S: Request</p>
+<p>      S-&gt;&gt;M: Offer</p>
+<p>      M-&gt;&gt;R: Forward</p>
+<p>      R-&gt;&gt;Env: Deliver</p>
+<p>      R-&gt;&gt;M: Ack1</p>
+<p>      M-&gt;&gt;S: Ack2</p>
+<p>      S-&gt;&gt;Env: Success</p>
+<p>    end</p>
+<h3 id="what-changed-so-it-reads-better">What changed (so it “reads” better)</h3>
+<ul>
+<li><p>The <strong>timeout</strong> is shown as an explicit <strong>note over Sender</strong> (“Timer expires”) to visually match an internal event on the Sender lifeline.</p></li>
+<li><p>The two phases are boxed separately (<strong>Attempt 1 — Lost</strong>, then <strong>Attempt 2 — Delivered</strong>) to reflect the <strong>HMSC concatenation</strong> of Lost ; Delivered.</p></li>
+<li><p>Receiver is included as a participant for consistency but is only involved in the Delivered phase (as in your component MSCs).</p></li>
+</ul>
+<p>If you’d like, I can redraw the same MSC in <strong>PlantUML</strong> (often closer to classic MSC/UML sequence diagram styling), or in a <strong>Z.120-style textual MSC</strong> format with explicit per-instance event ordering.</p>
+</section></main><footer class="site-footer"><div><p>Static replication package site generated from the supplied PDF and ZIP archive. Available data files are included in <code>data/</code>; Word documents are provided as uniformly styled HTML pages.</p></div></footer></body></html>

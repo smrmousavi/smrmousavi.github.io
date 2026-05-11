@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Experiments / GPT-5.4-Thinking Deep / Example 4.docx | HMSC Experiments Replication Package</title>
+<link href="../assets/style.css" rel="stylesheet"/></head>
+<body><a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="bar"><a class="brand" href="../index.html"><span class="brand-mark">K</span><span class="brand-text"><strong>HMSC Experiments</strong><span>Replication package website</span></span></a><nav class="primary"><a href="../index.html">Overview</a><a href="../browse/index.html">Browse data</a></nav></div></header>
+<main id="main"><p class="breadcrumbs"><a href="../index.html">Overview</a> / <a href="../browse/index.html">Browse data</a> / Converted Word document</p>
+<h1>Experiments / GPT-5.4-Thinking Deep / Example 4.docx</h1>
+<div class="button-row"><a class="button light" href="../browse/index.html">Back to data browser</a></div>
+<div class="notice small">This page is a uniformly styled HTML rendering of the original Word file. The original Word file is retained in the data folder for verification.</div>
+<section class="doc-content">[WARNING] Could not convert TeX math i\overset{\phantom{m}}{\rightarrow}j
+  , rendering as TeX
+[WARNING] Could not convert TeX math k\overset{\phantom{n}}{\rightarrow}l
+  , rendering as TeX
+[WARNING] Could not convert TeX math send(m)\text{\:\,} \prec \text{\:\,}recv(n)
+  , rendering as TeX:
+  send(m)\text{\:\,} \prec \text{\:\,}recv
+               ^
+  unexpected "\\"
+  expecting "}", text, "{", "$", "$$", "\\(" or "\\["
+<p><strong>Question:</strong> Consider the following two message sequence charts labelled "first" and "second"; compose them horizontally and draw the resulting composed message sequence chart.</p>
+<p><img src="../assets/doc-media/experiments-gpt-5-4-thinking-deep-example-4/media/image1.png" style="width:6.27014in;height:2.79097in"/></p>
+<p><strong>Answer:</strong></p>
+<p><img src="../assets/doc-media/experiments-gpt-5-4-thinking-deep-example-4/media/image2.png" style="width:6.27014in;height:4.17986in"/></p>
+<p>Assuming <strong>horizontal composition</strong> of MSCs means <em>juxtaposition/parallel composition</em> of the two charts, the composed MSC contains all four instances:</p>
+<ul>
+<li><p>i, j from <strong>first</strong></p></li>
+<li><p>k, l from <strong>second</strong></p></li>
+<li><p>message m : i → j</p></li>
+<li><p>message n : k → l</p></li>
+</ul>
+<p>There is <strong>no extra message or ordering constraint</strong> between the two charts.</p>
+<p>Plain Text</p>
+<p>msc first || second</p>
+<p>i j k l</p>
+<p>+-----+ +-----+ +-----+ +-----+</p>
+<p>| | | |</p>
+<p>|---- m ------&gt;| |---- n ------&gt;|</p>
+<p>| | | |</p>
+<p>| | | |</p>
+<p>===== ===== ===== =====</p>
+<p>Show more lines</p>
+<p>So the composed chart is simply the two MSCs placed side by side in one frame, with m and n independent of each other.</p>
+<p><strong>Question:</strong> What is the order between sending m and receiving n in the composed diagram.</p>
+<p><strong>Answer:</strong></p>
+<p>In the <strong>horizontally composed MSC</strong>, there is <strong>no forced order</strong> between:</p>
+<p><span class="math display"><em>s</em><em>e</em><em>n</em><em>d</em>(<em>m</em>)</span></p>
+<p>and</p>
+<p><span class="math display"><em>r</em><em>e</em><em>c</em><em>v</em>(<em>n</em>)</span></p>
+<p>That is, they are <strong>unordered / concurrent</strong> in the composed partial order.</p>
+<h3 id="reason">Reason</h3>
+<p>m belongs to the first MSC:</p>
+<p><span class="math display">$$i\overset{\phantom{m}}{\rightarrow}j
+$$</span></p>
+<p>while n belongs to the second MSC:</p>
+<p><span class="math display">$$k\overset{\phantom{n}}{\rightarrow}l
+$$</span></p>
+<p>Horizontal composition places the two MSCs side by side and preserves the internal causal orders:</p>
+<p><span class="math display"><em>s</em><em>e</em><em>n</em><em>d</em>(<em>m</em>) ≺ <em>r</em><em>e</em><em>c</em><em>v</em>(<em>m</em>)</span></p>
+<p><span class="math display"><em>s</em><em>e</em><em>n</em><em>d</em>(<em>n</em>) ≺ <em>r</em><em>e</em><em>c</em><em>v</em>(<em>n</em>)</span></p>
+<p>But it does <strong>not</strong> introduce causal order between events from different components.</p>
+<p>So there is no relation such as:</p>
+<p><span class="math display"><em>s</em><em>e</em><em>n</em><em>d</em>(<em>m</em>) ≺ <em>r</em><em>e</em><em>c</em><em>v</em>(<em>n</em>)</span></p>
+<p>or</p>
+<p><span class="math display"><em>r</em><em>e</em><em>c</em><em>v</em>(<em>n</em>) ≺ <em>s</em><em>e</em><em>n</em><em>d</em>(<em>m</em>)</span></p>
+<h3 id="conclusion">Conclusion</h3>
+<p><span class="math display"><em>s</em><em>e</em><em>n</em><em>d</em>(<em>m</em>) ∥ <em>r</em><em>e</em><em>c</em><em>v</em>(<em>n</em>)</span></p>
+<p>So <strong>sending m and receiving n are concurrent / unordered</strong> in the composed diagram.</p>
+<p><strong>Question:</strong> What is the order between sending m and receiving n in the composed diagram.</p>
+<p><strong>Answer:</strong></p>
+<p>In the <strong>horizontally composed MSC</strong>, there is <strong>no forced order</strong> between:</p>
+<p>Question:</p>
+<p><img src="../assets/doc-media/experiments-gpt-5-4-thinking-deep-example-4/media/image1.png" style="width:6.27014in;height:2.78958in"/></p>
+<p>Please consider the original two MSCs labelled "first" and "second", given here again. Please compose them vertically (by putting "first" on top and "second" at the bottom). Please draw the resulting composed diagram</p>
+<p>Answer:</p>
+<p><img src="../assets/doc-media/experiments-gpt-5-4-thinking-deep-example-4/media/image3.png" style="width:6.27014in;height:9.40556in"/></p>
+<p>For <strong>vertical composition</strong> (also called <strong>sequential composition</strong>) with <strong>msc first on top of msc second</strong>, the events of first must all occur <strong>before</strong> the events of second.</p>
+<p>Since the instance sets are disjoint, the composed MSC simply stacks the two charts in time.</p>
+<h3 id="resulting-composed-msc-ascii-sketch">Resulting composed MSC (ASCII sketch)</h3>
+<p>msc first ; second</p>
+<p>i j k l</p>
+<p>+-----+ +-----+ +-----+ +-----+</p>
+<p>| | |</p>
+<p>|---- m ------&gt;| |</p>
+<p>| | |</p>
+<p>| | |</p>
+<p>| | |</p>
+<p>| | | |</p>
+<p>| | |---- n ------&gt;|</p>
+<p>| | | |</p>
+<p>===== ===== ===== =====</p>
+<h3 id="key-properties-of-the-vertical-composition">Key properties of the vertical composition</h3>
+<ul>
+<li><p>All events of <strong>msc first precede all events of msc second</strong>.</p></li>
+<li><p>Ordering relations:</p>
+<ul>
+<li><p>send(m) ≺ recv(m)</p></li>
+<li><p>send(n) ≺ recv(n)</p></li>
+<li><p><strong>Additionally:</strong></p></li>
+</ul></li>
+</ul>
+<blockquote>
+<p><span class="math display">send(<em>m</em>),  recv(<em>m</em>)  ≺  send(<em>n</em>),  recv(<em>n</em>)</span></p>
+</blockquote>
+<h3 id="intuition">Intuition</h3>
+<p>Vertical composition enforces <strong>global time order</strong> between the two MSCs, unlike horizontal composition which leaves them concurrent.</p>
+<p>If you want, I can also formalize this as a <strong>partial order of events</strong> or compare it directly with the horizontal composition case.</p>
+<p>Question:</p>
+<p>What is the order between sending m and receiving n in the vertically composed diagram.</p>
+<p>Answer:</p>
+<p>In the <strong>vertically composed</strong> diagram, with <strong>first placed above second</strong>, the order is:</p>
+<p><span class="math display">$$send(m)\text{\:\,} \prec \text{\:\,}recv(n)
+$$</span></p>
+<p>So <strong>sending m occurs before receiving n</strong>.</p>
+<p><strong>Why?</strong></p>
+<p>Vertical composition imposes a sequential order between the two MSCs:</p>
+<p><span class="math display">first; second</span></p>
+<p>That means every event in first happens before every event in second.</p>
+<p>Since:</p>
+<ul>
+<li><p>send(m) is an event in <strong>msc first</strong></p></li>
+<li><p>recv(n) is an event in <strong>msc second</strong></p></li>
+</ul>
+<p>we get:</p>
+<p><span class="math display"><em>s</em><em>e</em><em>n</em><em>d</em>(<em>m</em>) ≺ <em>r</em><em>e</em><em>c</em><em>v</em>(<em>n</em>)</span></p>
+<p><strong>Also, by transitivity</strong></p>
+<p>The full relevant ordering is:</p>
+<p><span class="math display"><em>s</em><em>e</em><em>n</em><em>d</em>(<em>m</em>) ≺ <em>r</em><em>e</em><em>c</em><em>v</em>(<em>m</em>) ≺ <em>s</em><em>e</em><em>n</em><em>d</em>(<em>n</em>) ≺ <em>r</em><em>e</em><em>c</em><em>v</em>(<em>n</em>)</span></p>
+<p>So the answer is:</p>
+<p><strong>Sending m strictly precedes receiving n in the vertically composed MSC.</strong></p>
+</section></main><footer class="site-footer"><div><p>Static replication package site generated from the supplied PDF and ZIP archive. Available data files are included in <code>data/</code>; Word documents are provided as uniformly styled HTML pages.</p></div></footer></body></html>

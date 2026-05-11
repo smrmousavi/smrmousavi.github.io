@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Experiments / Gemini 3 - Thinking / Example 5.docx | HMSC Experiments Replication Package</title>
+<link href="../assets/style.css" rel="stylesheet"/></head>
+<body><a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="bar"><a class="brand" href="../index.html"><span class="brand-mark">K</span><span class="brand-text"><strong>HMSC Experiments</strong><span>Replication package website</span></span></a><nav class="primary"><a href="../index.html">Overview</a><a href="../browse/index.html">Browse data</a></nav></div></header>
+<main id="main"><p class="breadcrumbs"><a href="../index.html">Overview</a> / <a href="../browse/index.html">Browse data</a> / Converted Word document</p>
+<h1>Experiments / Gemini 3 - Thinking / Example 5.docx</h1>
+<div class="button-row"><a class="button light" href="../browse/index.html">Back to data browser</a></div>
+<div class="notice small">This page is a uniformly styled HTML rendering of the original Word file. The original Word file is retained in the data folder for verification.</div>
+<section class="doc-content"><p><strong>Question:</strong> Consider the following two message sequence charts labelled "first" and "second"; compose them horizontally and draw the resulting composed message sequence chart.</p>
+<p><img src="../assets/doc-media/experiments-gemini-3-thinking-example-5/media/image1.png" style="width:6.27014in;height:1.89583in"/></p>
+<p><strong>Answer:</strong></p>
+<p>To compose two Message Sequence Charts (MSCs) <strong>horizontally</strong>, we essentially merge the lifelines and place the events from both charts into a single diagram. In formal MSC semantics (such as MSC-96 or MSC-2000), horizontal composition is the <strong>parallel operator</strong>, meaning the events of "first" and "second" can occur in any order relative to each other, provided their internal ordering is preserved.</p>
+<h3 id="components-of-the-composed-chart">Components of the Composed Chart</h3>
+<p>Since both charts share the same instances ($i, j$, and $k$), the resulting chart will have three lifelines. The events included are:</p>
+<ol type="1">
+<li><p><strong>From "first":</strong> * A message $m$ sent from instance $i$ to $j$.</p>
+<ul>
+<li><p>A local action $a$ performed by instance $k$.</p></li>
+</ul></li>
+<li><p><strong>From "second":</strong></p>
+<ul>
+<li><p>A message $n$ sent from instance $i$ to $j$.</p></li>
+<li><p>A message $o$ sent from instance $k$ to $j$.</p></li>
+</ul></li>
+</ol>
+<h3 id="the-resulting-chart">The Resulting Chart</h3>
+<p>In the composed chart, all these events appear on the shared lifelines. Because they are composed horizontally (in parallel), there is no specific vertical ordering required between the events of the "first" set and the "second" set.</p>
+<h3 id="formal-representation">Formal Representation</h3>
+<p>If we denote the charts as $M_1$ and $M_2$, the horizontal composition is $M_1 \parallel M_2$. The set of traces for the resulting MSC is the <strong>interleaving</strong> of the traces of the individual charts.</p>
+<ul>
+<li><p><strong>Instance $i$</strong> now has a sequence of two events (sending $m$ and $n$).</p></li>
+<li><p><strong>Instance $j$</strong> now has a sequence of three receive events ($m, n$, and $o$).</p></li>
+<li><p><strong>Instance $k$</strong> now has a local action $a$ and a send event $o$.</p></li>
+</ul>
+<p>Would you like to see how this composition would change if it were done <strong>vertically</strong> (sequentially) instead?</p>
+<p>Please draw the resulting of MSC.</p>
+<p>Here is the composed Message Sequence Chart, titled "msc composed." It horizontally integrates the interactions from both the first and second charts into a single diagram.</p>
+<p><img src="../assets/doc-media/experiments-gemini-3-thinking-example-5/media/image2.png" style="width:6.27014in;height:1.89792in"/></p>
+<p><strong>Question:</strong> What is the order between sending m and receiving o in the composed diagram.</p>
+<p><strong>Answer:</strong></p>
+<p>In the horizontally composed Message Sequence Chart, there is <strong>no specific order</strong> between sending message $m$ and receiving message $o$.</p>
+<p>In the semantics of Message Sequence Charts, horizontal composition represents <strong>parallel execution</strong> (concurrency). This means that while the internal ordering of events within each individual chart is preserved, there is no causal relationship or timing constraint between an event from the "first" chart and an event from the "second" chart.</p>
+<p><strong>Why they are unordered:</strong></p>
+<ul>
+<li><p><strong>Independence:</strong> The message $m$ (from $i$ to $j$) and the message $o$ (from $k$ to $j$) originate from different original MSCs.</p></li>
+<li><p><strong>Concurrency:</strong> Horizontal composition implies that the processes described in "first" and "second" can happen at the same time or in any interleaved order.</p></li>
+<li><p><strong>Lack of Synchronization:</strong> There is no event that forces instance $i$ to wait for instance $k$, or vice versa, before these specific actions occur.</p></li>
+</ul>
+<p>In formal terms, these two events are <strong>concurrent</strong>. If you were to trace the execution, you might see $m$ sent before $o$ is received, or $o$ received before $m$ is sent; both are valid behaviors of the composed system.</p>
+<p>Would you like to know how a <strong>vertical composition</strong> would change this relationship?</p>
+<p>Question:</p>
+<p>Please consider the original two MSCs labelled "first" and "second", given here again. Please compose them vertically (by putting "first" on top and "second" at the bottom). Please draw the resulting composed diagram<img src="../assets/doc-media/experiments-gemini-3-thinking-example-5/media/image1.png" style="width:6.27014in;height:1.89583in"/></p>
+<p>Answer:</p>
+<p><img src="../assets/doc-media/experiments-gemini-3-thinking-example-5/media/image3.png" style="width:6.27014in;height:1.89792in"/></p>
+<p>Question:</p>
+<p>What is the order between internal event a and receiving o in the vertically composed MSC.</p>
+<p>Answer:</p>
+<p>In the vertically composed Message Sequence Chart, the internal event <strong>$a$ happens before the receiving of message $o$</strong>.</p>
+<p>Vertical composition (often denoted as sequential composition) implies that for each instance, the events in the first chart must complete before the events in the second chart begin.</p>
+<p><strong>The Causal Chain</strong></p>
+<p>We can trace the ordering through the following logical steps:</p>
+<ol type="1">
+<li><p><strong>Local Ordering on Lifeline $k$:</strong> Because "first" is placed on top of "second," all events on instance $k$ from the first chart must occur before events on instance $k$ from the second chart. Therefore, <strong>internal event $a$ occurs before the sending of message $o$</strong>.</p></li>
+<li><p><strong>Message Causality:</strong> In any MSC, a message must be sent before it can be received. Therefore, the <strong>sending of message $o$ (on instance $k$) occurs before the receiving of message $o$ (on instance $j$)</strong>.</p></li>
+<li><p><strong>Transitivity:</strong> Following the chain of events, because $a &lt; \text{send}(o)$ and $\text{send}(o) &lt; \text{receive}(o)$, it follows that <strong>$a &lt; \text{receive}(o)$</strong>.</p></li>
+</ol>
+<p><strong>Summary of Relationships</strong></p>
+<table>
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 16%"/>
+<col style="width: 18%"/>
+<col style="width: 42%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Event A</strong></th>
+<th><strong>Relationship</strong></th>
+<th><strong>Event B</strong></th>
+<th><strong>Reason</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Internal event $a$</td>
+<td><strong>Before</strong></td>
+<td>Sending $o$</td>
+<td>Sequential ordering on lifeline $k$</td>
+</tr>
+<tr class="even">
+<td>Sending $o$</td>
+<td><strong>Before</strong></td>
+<td>Receiving $o$</td>
+<td>Causal necessity of message passing</td>
+</tr>
+<tr class="odd">
+<td><strong>Internal event $a$</strong></td>
+<td><strong>Before</strong></td>
+<td><strong>Receiving $o$</strong></td>
+<td>Transitive property of the partial order</td>
+</tr>
+</tbody>
+</table>
+<p>In this vertical arrangement, instance $k$ acts as the "clock" that synchronizes this specific sequence. Even though $a$ and the receipt of $o$ happen on different lifelines, they are strictly ordered.</p>
+</section></main><footer class="site-footer"><div><p>Static replication package site generated from the supplied PDF and ZIP archive. Available data files are included in <code>data/</code>; Word documents are provided as uniformly styled HTML pages.</p></div></footer></body></html>

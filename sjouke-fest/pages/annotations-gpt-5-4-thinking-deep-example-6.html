@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Annotations / GPT-5.4-Thinking Deep / Example 6.docx | HMSC Experiments Replication Package</title>
+<link href="../assets/style.css" rel="stylesheet"/></head>
+<body><a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="bar"><a class="brand" href="../index.html"><span class="brand-mark">K</span><span class="brand-text"><strong>HMSC Experiments</strong><span>Replication package website</span></span></a><nav class="primary"><a href="../index.html">Overview</a><a href="../browse/index.html">Browse data</a></nav></div></header>
+<main id="main"><p class="breadcrumbs"><a href="../index.html">Overview</a> / <a href="../browse/index.html">Browse data</a> / Converted Word document</p>
+<h1>Annotations / GPT-5.4-Thinking Deep / Example 6.docx</h1>
+<div class="button-row"><a class="button light" href="../browse/index.html">Back to data browser</a></div>
+<div class="notice small">This page is a uniformly styled HTML rendering of the original Word file. The original Word file is retained in the data folder for verification.</div>
+<section class="doc-content">[WARNING] Could not convert TeX math \text{send}(m)\text{\:\,} \parallel \text{\:\,recv}(p)
+  , rendering as TeX:
+  text{send}(m)\text{\:\,} \parallel \text
+                     ^
+  unexpected "\\"
+  expecting "}", text, "{", "$", "$$", "\\(" or "\\["
+[WARNING] Could not convert TeX math \text{first\:\,};\text{\:\,second},
+  , rendering as TeX:
+  \text{first\:\,};\text{\:\,second},
+             ^
+  unexpected "\\"
+  expecting text, "}", "{", "$", "$$", "\\(" or "\\["
+[WARNING] Could not convert TeX math recv(n)\text{\:\,} \prec \text{\:\,}recv(p)
+  , rendering as TeX:
+  recv(n)\text{\:\,} \prec \text{\:\,}recv
+               ^
+  unexpected "\\"
+  expecting "}", text, "{", "$", "$$", "\\(" or "\\["
+<p><strong>Question:</strong> Consider the following two message sequence charts labelled "first" and "second"; compose them horizontally and draw the resulting composed message sequence chart.</p>
+<p><img src="../assets/doc-media/annotations-gpt-5-4-thinking-deep-example-6/media/image1.png" style="width:6.27014in;height:2.48542in"/></p>
+<p><strong>Answer:</strong></p>
+<p><img src="../assets/doc-media/annotations-gpt-5-4-thinking-deep-example-6/media/image2.png" style="width:6.27014in;height:4.17986in"/></p>
+<p>Here is the <strong>horizontally composed MSC</strong> for your example.</p>
+<h3 id="result-of-horizontal-composition-msc-first-msc-second">Result of horizontal composition (msc first ‖ msc second)</h3>
+<ul>
+<li><p>Instances are the <strong>union</strong>: i, j, k</p></li>
+<li><p>All messages from both MSCs are present</p></li>
+<li><p><strong>No new ordering</strong> is introduced between events of the two MSCs</p></li>
+</ul>
+<p>msc first || second</p>
+<p>i j k</p>
+<p>+-----+ +-----+ +-----+</p>
+<p>| | |</p>
+<p>|---- m ---------&gt;| |</p>
+<p>|&lt;--- n ----------| |</p>
+<p>| |---- o ---------&gt;|</p>
+<p>| |&lt;--- p ----------|</p>
+<p>| | |</p>
+<p>===== ===== =====</p>
+<h3 id="preserved-ordering-relations">Preserved ordering relations</h3>
+<ul>
+<li><p>From <strong>msc first</strong>:</p>
+<ul>
+<li><p>send(m) ≺ recv(m)</p></li>
+<li><p>send(n) ≺ recv(n)</p></li>
+<li><p>On instance j: recv(m) ≺ send(n)</p></li>
+</ul></li>
+<li><p>From <strong>msc second</strong>:</p>
+<ul>
+<li><p>send(o) ≺ recv(o)</p></li>
+<li><p>send(p) ≺ recv(p)</p></li>
+<li><p>On instance j: send(o) ≺ recv(p)</p></li>
+</ul></li>
+</ul>
+<h3 id="important-consequence">Important consequence</h3>
+<p>There is <strong>no ordering constraint</strong> between:</p>
+<ul>
+<li><p>m/n and o/p, except those already imposed locally on j</p></li>
+</ul>
+<p>If you want, I can next:</p>
+<ul>
+<li><p>derive the <strong>partial order formally</strong>, or</p></li>
+<li><p>list <strong>possible linearizations (traces)</strong> of this MSC.</p></li>
+</ul>
+<p><strong>Task type: Composition</strong></p>
+<p><strong>Judgment: Incorrect</strong></p>
+<p><strong>Question:</strong> What is the order between sending m and receiving p in the composed diagram.</p>
+<p><strong>Answer:</strong></p>
+<p>In the <strong>horizontal composition</strong> <span class="math inline">msc first ∥ msc second</span>, there is <strong>no additional ordering</strong> introduced between events that come from different component MSCs.</p>
+<ul>
+<li><p><span class="math inline">send(<em>m</em>)</span>is an event from <strong>msc first</strong> (on instance <span class="math inline"><em>i</em></span>).</p></li>
+<li><p><span class="math inline">recv(<em>p</em>)</span>is an event from <strong>msc second</strong> (on instance <span class="math inline"><em>j</em></span>).</p></li>
+</ul>
+<p>Since horizontal composition preserves only the internal causal orders of each MSC and does <strong>not</strong> relate events across the two MSCs, we get:</p>
+<p><span class="math display">$$\text{send}(m)\text{\:\,} \parallel \text{\:\,recv}(p)
+$$</span></p>
+<h3 id="conclusion">Conclusion</h3>
+<p>✅ <strong>Sending</strong> <span class="math inline"><em>m</em></span>and <strong>receiving</strong> <span class="math inline"><em>p</em></span>are <strong>unordered (concurrent)</strong> in the composed diagram.</p>
+<h3 id="why-theres-no-causal-chain">Why there’s no causal chain</h3>
+<p>Within the components you have:</p>
+<ul>
+<li><p>In <strong>msc first</strong>:<br/>
+<span class="math display">send(<em>m</em>) ≺ recv(<em>m</em>) ≺ send(<em>n</em>) ≺ recv(<em>n</em>)</span></p></li>
+<li><p>In <strong>msc second</strong>:<br/>
+<span class="math display">send(<em>o</em>) ≺ recv(<em>o</em>) ≺ send(<em>p</em>) ≺ recv(<em>p</em>)</span></p></li>
+</ul>
+<p>But there is <strong>no rule</strong> in horizontal composition that forces, for example,<br/>
+<span class="math inline">recv(<em>m</em>)</span>to happen before <span class="math inline">send(<em>o</em>)</span>, or anything similar—so <strong>no path</strong> exists that would order <span class="math inline">send(<em>m</em>)</span>relative to <span class="math inline">recv(<em>p</em>)</span>.</p>
+<p>If you want, I can also list <strong>all implied orders</strong> in the composed partial order (and explicitly show which pairs remain concurrent).</p>
+<p><strong>Task type: Composition</strong></p>
+<p><strong>Judgment: Correct</strong></p>
+<p>Question:</p>
+<p>Please consider the original two MSCs labelled "first" and "second", given here again. Please compose them vertically (by putting "first" on top and "second" at the bottom). Please draw the resulting composed diagram.</p>
+<p><img src="../assets/doc-media/annotations-gpt-5-4-thinking-deep-example-6/media/image1.png" style="width:6.27014in;height:2.48542in"/></p>
+<p>Answer:</p>
+<p><img src="../assets/doc-media/annotations-gpt-5-4-thinking-deep-example-6/media/image3.png" style="width:6.27014in;height:4.17986in"/></p>
+<p>Generating the <strong>vertically composed</strong> MSC (first ; second) now — with <strong>msc first on top</strong> (messages <strong>m</strong> then <strong>n</strong>) and <strong>msc second at the bottom</strong> (messages <strong>o</strong> then <strong>p</strong>), sharing lifeline <strong>j</strong> across both parts.</p>
+<h2 id="provide-your-feedback-on-bizchat">Provide your feedback on BizChat</h2>
+<p><strong>Task type: Composition</strong></p>
+<p><strong>Judgment: Incorrect</strong></p>
+<p><strong>Question:</strong></p>
+<p>What is the order between receiving n and receiving p in the vertically-composed MSC.</p>
+<p><strong>Answer:</strong></p>
+<p>In the <strong>vertically composed</strong> MSC</p>
+<p><span class="math display">$$\text{first\:\,};\text{\:\,second},
+$$</span></p>
+<p><strong>every event in</strong> msc first is ordered <strong>before every event in</strong> msc second.</p>
+<h3 id="identify-the-two-events">Identify the two events</h3>
+<ul>
+<li><p><strong>Receiving n</strong> happens in <strong>msc first</strong> (it is the reception of message n on instance i).</p></li>
+<li><p><strong>Receiving p</strong> happens in <strong>msc second</strong> (it is the reception of message p on instance j).</p></li>
+</ul>
+<h3 id="order-in-the-vertical-composition">Order in the vertical composition</h3>
+<p>Because vertical composition imposes a global “finish first, then start second” constraint:</p>
+<p><span class="math display">$$recv(n)\text{\:\,} \prec \text{\:\,}recv(p)
+$$</span></p>
+<p>✅ <strong>Answer:</strong> <strong>Receiving n happens before receiving p</strong> in the vertically composed MSC.</p>
+<h4 id="extra-intuition">(Extra intuition)</h4>
+<p>Even though the two receives occur on <em>different lifelines</em> (i for recv(n) and j for recv(p)), the <strong>sequential stacking</strong> of first above second forces all events in the top chart to precede all events in the bottom chart.</p>
+<p><strong>Task type: Composition</strong></p>
+<p><strong>Judgment: Incorrect.</strong></p>
+</section></main><footer class="site-footer"><div><p>Static replication package site generated from the supplied PDF and ZIP archive. Available data files are included in <code>data/</code>; Word documents are provided as uniformly styled HTML pages.</p></div></footer></body></html>
